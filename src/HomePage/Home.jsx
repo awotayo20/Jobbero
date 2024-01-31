@@ -18,7 +18,6 @@ const Home = () => {
             <HappyJobbero />
           </div>
 
-          <AboutUs />
           <Partnership />
           <FeatureJobs />
           <Journey />
