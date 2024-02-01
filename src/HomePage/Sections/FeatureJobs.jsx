@@ -14,7 +14,7 @@ const FeatureJobs = () => {
           <button className="font-normal text-xl">see more</button>
         </div>
         <div className="">
-          <div className="bg-[#001F3F] py-9 gap-3 justify-center lg:grid lg:grid-cols-3">
+          <div className="bg-[#001F3F] py-9 gap-3 justify-center grid lg:grid-cols-3 w-full">
             <FeatureJobsCard
               title={'HR Team Lead'}
               amount={'₦450 - 500k/Per Month'}
