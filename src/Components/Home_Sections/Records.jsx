@@ -3,11 +3,11 @@ import React from 'react'
 const Records = () => {
   return (
     <div className="bg-[#001F3F] py-9">
-      <h3 className="text-white font-Poppins text-2xl text-center py-14">
+      <h3 className="text-white font-Poppins text-xl lg:text-2xl text-center py-14">
         Jobbero helps millions of job seekers and employers find the right fit
         every day.
       </h3>
-      <div className="flex justify-around">
+      <div className="flex justify-around flex-col lg:flex-row gap-4 lg:gap-1">
         <RecordCard
           svg={
             <svg
@@ -135,12 +135,14 @@ export default Records
 export const RecordCard = ({ svg, counts, subject }) => {
   return (
     <div>
-      <div className="bg-white flex flex-col justify-between items-center py-10 px-16 gap-1 rounded-full">
+      <div className="bg-white flex flex-col justify-between items-center py-7 px-16 lg:gap-1 rounded-2xl mx-4 lg:rounded-full">
         <div className="">{svg}</div>
         <h4 className="text-[#0074CC] font-Poppins font-bold text-2xl text-center w-full">
           {counts}
         </h4>
-        <p className="text-[#001F3F] font-semibold text-base">{subject}</p>
+        <p className="text-[#001F3F] font-semibold text-sm text-center">
+          {subject}
+        </p>
       </div>
     </div>
   )

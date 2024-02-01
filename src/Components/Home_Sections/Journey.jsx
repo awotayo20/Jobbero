@@ -10,7 +10,7 @@ import workingLap from '../../assets/workingLap.png'
 const Journey = () => {
   return (
     <>
-      <div className="relative mt-6 mb-20 ">
+      <div className="relative mt-6 mb-20 hidden lg:block">
         <div className="absolute right-14 top-10 z-20 flex flex-col gap-3">
           <YellowNet />
           <YellowNet />
@@ -18,7 +18,7 @@ const Journey = () => {
         <div className="absolute z-20 bottom-20 right-[450px]">
           <YellowBall />
         </div>
-        <div className="flex bg-white justify-around items-center relative">
+        <div className="flex justify-around items-center relative">
           <div className="relative z-20">
             <div>
               <h2 className="font-bold text-5xl text-white">Jobbero</h2>
@@ -42,8 +42,8 @@ const Journey = () => {
         </div>
         <div></div>
         <div className="rounded-2xl bg-[#001F3F] top-20 bottom-10 right-0 left-0 absolute z-10 max-w-[1385px] mx-9"></div>
-        <div className="absolute -bottom-20 z-20 bg-[#0074CC] mx-9 p-9 rounded-b-2xl">
-          <div className="flex items-center justify-around">
+        <div className="absolute -bottom-20 z-20 bg-[#0074CC] py-9 px-6 rounded-b-2xl">
+          <div className="flex gap-6 items-center justify-around">
             <JourneyFooter
               icon={<LatestJob />}
               title={'Be the first to see latest jobs'}

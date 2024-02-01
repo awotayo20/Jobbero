@@ -4,7 +4,7 @@ import JobberoSticker from '../../assets/jobberoSticker.png'
 const WhyUs = () => {
   return (
     <div>
-      <div className="my-56 relative bg-[#001F3F]">
+      <div className="hidden lg:block my-0 lg:my-56 relative bg-[#001F3F]">
         <div className="absolute">
           <Substract />
           <div className="absolute top-1/2 left-5">
