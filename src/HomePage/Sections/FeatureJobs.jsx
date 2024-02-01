@@ -14,7 +14,7 @@ const FeatureJobs = () => {
           <button className="font-normal text-xl">see more</button>
         </div>
         <div className="">
-          <div className="bg-[#001F3F] py-9 gap-3 justify-center grid lg:grid-cols-3">
+          <div className="bg-[#001F3F] py-9 gap-3 justify-center lg:grid lg:grid-cols-3">
             <FeatureJobsCard
               title={'HR Team Lead'}
               amount={'₦450 - 500k/Per Month'}
@@ -106,7 +106,7 @@ export const FeatureJobsCard = ({
   sponsorship,
 }) => {
   return (
-    <div className="bg-white p-4 rounded-xl">
+    <div className="bg-white p-4 rounded-xl ">
       <div className="flex justify-between h-full">
         <div className="flex flex-col justify-between gap-4">
           <div className="flex flex-col items-start">
