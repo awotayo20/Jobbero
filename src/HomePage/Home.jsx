@@ -14,7 +14,7 @@ const Home = () => {
     <>
       <div className="bg-[#001F3F] w-full">
         <div className="max-w-[1140px] mx-auto">
-          <div className="py-4 mx-4 px-9 bg-[#001F3F] rounded-2xl">
+          <div className="h-[600px] py-4 mx-4 lg:px-9 bg-[#001F3F] rounded-2xl">
             <HappyJobbero />
           </div>
 
@@ -24,13 +24,13 @@ const Home = () => {
           <WhyUs />
           <Records />
           <PostJob />
-          <div>
-            <img src={FooterDesign} alt="Footer Design" />
-          </div>
-          <footer>
-            <Footer />
-          </footer>
         </div>
+        <div>
+          <img src={FooterDesign} alt="Footer Design" />
+        </div>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   )

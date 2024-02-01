@@ -7,11 +7,11 @@ import farymmyLogo from '../../assets/farymmyLogo.png'
 
 const Partnership = () => {
   return (
-    <div className="bg-white rounded-full my-9">
-      <h4 className="text-[#001F3F] font-semibold text-3xl text-center pt-5">
+    <div className="bg-white rounded-lg lg:rounded-full my-9 mx-4 md:mx-0 p-4">
+      <h4 className="text-[#001F3F] font-semibold text-2xl text-center py-5">
         The fastest-growing companies use Jobbero
       </h4>
-      <div className="flex flex-wrap justify-around items-center">
+      <div className="flex flex-col md:flex-row flex-wrap justify-around items-center gap-y-7">
         <PartnershipPic img={piggyLogo} alt={'piggyLogo'} />
         <PartnershipPic img={wakanowLogo} alt={'wakanowLogo'} />
         <PartnershipPic img={heyfoodLogo} alt={'heyfoodLogo'} />
@@ -28,7 +28,9 @@ export default Partnership
 export const PartnershipPic = ({ img, alt }) => {
   return (
     <>
-      <img src={img} alt={alt} />
+      <div>
+        <img src={img} alt={alt} />
+      </div>
     </>
   )
 }

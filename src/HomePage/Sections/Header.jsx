@@ -4,7 +4,7 @@ import JobberoLogo from '../../assets/jobberoLogo.png'
 export const Header = () => {
   return (
     <section>
-      <div className="">
+      <div>
         <div className="font-semibold font-Poppins text-white flex items-center justify-between gap-9 ">
           <div>
             <Link to="/">
@@ -12,8 +12,8 @@ export const Header = () => {
             </Link>
           </div>
 
-          <div className="flex justify-between items-center w-full">
-            <ul className="flex gap-12">
+          <div className="hidden lg:flex justify-between items-center w-full">
+            <ul className="hidden lg:flex gap-12">
               <li className="underline underline-offset-8 decoration-4">
                 <Link to="/">Home</Link>
               </li>

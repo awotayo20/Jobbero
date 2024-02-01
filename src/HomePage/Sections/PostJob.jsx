@@ -4,16 +4,16 @@ import GroupCircles from '../../assets/GroupCircles.png'
 const PostJob = () => {
   return (
     <div className="relative h-screen overflow-hidden px-9 bg-white">
-      <div className="grid grid-cols-2 items-center h-full">
-        <div>
-          <h3 className="w-[90%] mx-auto font-Poppins font-semibold text-4xl text-[#001F3F]">
+      <div className="lg:grid grid-cols-2 items-center h-full">
+        <div className="flex flex-col text-center lg:text-left pt-4 lg:pt-0">
+          <h3 className="w-[90%] mx-auto font-Poppins font-semibold text-4xl text-[#001F3F] my-4">
             Searching for right talent?
           </h3>
           <p className="font-normal text-[28px] font-Poppins pt-2">
             We have over 1 million job-seekers across all levels, right fit for
             your organisation!
           </p>
-          <button className="bg-[#0074CC] py-1 px-20 rounded-full my-5 text-white text-xl font-semibold">
+          <button className="bg-[#0074CC] py-1 px-20 rounded-full my-5 text-white text-xl font-semibold lg:w-72">
             Post a Job
           </button>
         </div>
