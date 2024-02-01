@@ -36,6 +36,10 @@ body {
   font-size: 20px;
 }
 
+.JobCard:hover {
+  background: rgba(0, 116, 204, 0.5);
+}
+
 .custom-file-input-cv::-webkit-file-upload-button {
   visibility: hidden;
 }

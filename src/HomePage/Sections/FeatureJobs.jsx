@@ -13,7 +13,7 @@ const FeatureJobs = () => {
           <h2 className=" font-semibold text-2xl">Featured Jobs</h2>
           <button className="font-normal text-xl">see more</button>
         </div>
-        <div className="">
+        <div className="w-full">
           <div className="bg-[#001F3F] py-9 gap-3 justify-center grid lg:grid-cols-3 w-full">
             <FeatureJobsCard
               title={'HR Team Lead'}
@@ -106,7 +106,7 @@ export const FeatureJobsCard = ({
   sponsorship,
 }) => {
   return (
-    <div className="bg-white p-4 rounded-xl ">
+    <div className="JobCard cursor-pointer bg-white p-4 rounded-xl duration-500">
       <div className="flex justify-between h-full">
         <div className="flex flex-col justify-between gap-4">
           <div className="flex flex-col items-start">
