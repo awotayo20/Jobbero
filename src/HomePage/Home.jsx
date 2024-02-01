@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#001F3F] w-full">
-        <div className="max-w-[1385px] mx-auto">
+        <div className="max-w-[1140px] mx-auto">
           <div className="py-4 mx-4 px-9 bg-[#001F3F] rounded-2xl">
             <HappyJobbero />
           </div>

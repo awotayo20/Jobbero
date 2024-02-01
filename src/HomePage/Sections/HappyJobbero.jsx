@@ -17,16 +17,16 @@ export const HappyJobbero = () => {
   return (
     <div className="lg:grid grid-cols-6">
       <div className="text-white font-Poppins w-full col-span-4">
-        <h2 className="font-bold text-6xl">Job Search Simplified</h2>
-        <p className="text-[27px]">
+        <h2 className="font-bold text-4xl">Job Search Simplified</h2>
+        <p className="text-2xl mt-2">
           One Platform, Countless Opportunities, Guaranteed Success
         </p>
-        <div className="mt-12 bg-white rounded-[30px] px-5 py-4 flex justify-between">
-          <div className="flex gap-12">
+        <div className="mt-9 bg-white rounded-[30px] px-4 py-4 flex justify-between">
+          <div className="flex gap-7">
             <div>
               <label
                 htmlFor="location"
-                className="text-[#001F3F] font-Poppins font-semibold text-xl block mb-[14px]"
+                className="text-[#001F3F] font-Poppins font-semibold text-lg block mb-[14px]"
               >
                 Location
               </label>
@@ -55,7 +55,7 @@ export const HappyJobbero = () => {
               />
             </div>
           </div>
-          <button className="bg-[#0074CC] text-xl font-semibold px-8 rounded-[18px]">
+          <button className="bg-[#0074CC] text-lg font-semibold px-6 rounded-[18px]">
             Explore Now
           </button>
         </div>
@@ -79,7 +79,7 @@ export const HappyJobbero = () => {
         </div>
         <DownloadApp />
       </div>
-      <div className="-mr-14 relative col-span-2">
+      <div className="hidden lg:block -mr-14 relative col-span-2">
         <img
           src={happyJobbero}
           alt="happyJobbero"
