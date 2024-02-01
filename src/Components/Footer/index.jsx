@@ -3,7 +3,7 @@ import FacebookIcon from '../../assets/Facebook.png'
 import TwitterIcon from '../../assets/Twitter.png'
 import InstagramIcon from '../../assets/Instagram.png'
 import LinkedInIcon from '../../assets/LinkedInIcon.png'
-import { DownloadApp } from './HappyJobbero'
+import { DownloadApp } from '../Home_Sections/HappyJobbero'
 
 const Footer = () => {
   return (

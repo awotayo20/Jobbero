@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import smiley from '../assets/smiley.png'
-import captcha from '../assets/captcha.png'
-import '../css/login.css'
-import Footer from '../HomePage/Sections/Footer'
+import smiley from '../../assets/smiley.png'
+import captcha from '../../assets/captcha.png'
+import '../../Styles/login.css'
+import Footer from '../../Components/Footer/index'
 
 const Login = () => {
   return (

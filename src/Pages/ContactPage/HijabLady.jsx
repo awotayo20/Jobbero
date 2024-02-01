@@ -1,4 +1,4 @@
-import HijabLadyPng from '../assets/hijabLady.png'
+import HijabLadyPng from '../../assets/hijabLady.png'
 
 const HijabLady = () => {
   return (
