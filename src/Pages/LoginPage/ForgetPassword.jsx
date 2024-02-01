@@ -1,6 +1,6 @@
 import ReCAPTCHA from 'react-google-recaptcha'
 import SmileySVG from './SmileySVG.jsx'
-import Footer from '../HomePage/Sections/Footer'
+import Footer from '../../Components/Footer/index.jsx'
 
 const ForgetPassword = () => {
   const reCAPTCHAChange = (value) => {

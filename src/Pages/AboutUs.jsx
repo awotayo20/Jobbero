@@ -1,4 +1,4 @@
-import JobberoLogo from '../../assets/jobberoLogo.png'
+import JobberoLogo from '../assets/jobberoLogo.png'
 
 const AboutUs = () => {
   return (

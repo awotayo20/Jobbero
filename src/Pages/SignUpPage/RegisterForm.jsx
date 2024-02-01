@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import Select from 'react-select'
-import EmploymentPicture from '../assets/Employerpicture.png'
+import EmploymentPicture from '../../assets/Employerpicture.png'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 export const RegisterForm = () => {

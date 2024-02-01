@@ -1,6 +1,6 @@
 import { RegisterForm } from './RegisterForm'
-import JobberoLogo from '../assets/jobberoLogo.png'
-import Footer from '../HomePage/Sections/Footer'
+import JobberoLogo from '../../assets/jobberoLogo.png'
+import Footer from '../../Components/Footer/index'
 
 const SignUp = () => {
   return (

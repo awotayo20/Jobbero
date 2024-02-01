@@ -1,4 +1,4 @@
-import smileyPNG from '../assets/smileyPNG.png'
+import smileyPNG from '../../assets/smileyPNG.png'
 
 const SmileySVG = () => {
   return (
