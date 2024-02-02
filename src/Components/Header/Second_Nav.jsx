@@ -32,18 +32,14 @@ const Navbar = ({ children }) => {
 
   return (
     <div
-      className={`${
-        isScrolled || sideNav
-          ? "bg-white text-[#0074CC]"
-          : "bg-transparent text-white"
-      } fixed h-[65px] md:h-[90px] w-full z-50 flex flex-col justify-center items-center`}
+      className={`bg-[#001F3F] text-white h-[65px] md:h-[90px] w-auto m-4 md:m-8 z-50 flex flex-col justify-center items-center rounded-full`}
     >
       <nav className="navbar px-3 md:px-[3em] top-[10vh] self-center">
         <Link to="/">
           <img src={JobberoLogo} alt="" className="" />
         </Link>
 
-        <div className="w-full gap-7 lg:gap-12 hidden md:flex justify-center items-start">
+        {/* <div className="w-full gap-7 lg:gap-12 hidden md:flex justify-center items-start">
           <ul className="flex gap-12">
             <li className="underline underline-offset-8 decoration-4">
               <Link to="/">Home</Link>
@@ -65,10 +61,10 @@ const Navbar = ({ children }) => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
-        <div className="icon md:flex hidden w-[27%] justify-around  items-center">
-          <button className="py-2 px-6 md:flex hidden border-[3px] border-[#0074CC] rounded-full">
+        <div className="icon w-[15em] justify-end  items-center">
+          <button className="py-2 px-6 border-[3px] border-[#0074CC] rounded-full">
             <Link to="login">Login</Link>
           </button>
           <button className="py-2 md:flex hidden bg-[#0074CC] text-white px-6 border-[3px] border-[#0074CC] rounded-full">
@@ -76,14 +72,14 @@ const Navbar = ({ children }) => {
           </button>
         </div>
 
-        <div onClick={() => setSideNav(!sideNav)} className="flex md:hidden">
+        {/* <div onClick={() => setSideNav(!sideNav)} className="flex md:hidden">
           {sideNav ? (
             <IoCloseSharp className="text-[3vh]" />
           ) : (
             <MdOutlineMenu className="text-[3vh]" />
           )}
         </div>
-        {sideNav && <SideNavMobile />}
+        {sideNav && <SideNavMobile />} */}
       </nav>
     </div>
   );
