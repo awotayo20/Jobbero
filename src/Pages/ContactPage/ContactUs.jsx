@@ -1,9 +1,11 @@
 import HijabLady from './HijabLady'
+import Header from "../../Components/Header/Second_Nav";
 
 const ContactUs = () => {
   return (
     <>
-      <div className="lg:grid grid-cols-2 items-center">
+    <Header />
+      <div className="lg:grid grid-cols-2 mt-8 items-center">
         <div className="w-[90%] mx-auto">
           <h2 className="text-[#001F3F] font-semibold text-3xl">Contact Us</h2>
           <div>

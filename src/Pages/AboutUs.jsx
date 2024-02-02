@@ -1,9 +1,11 @@
 import JobberoLogo from '../assets/jobberoLogo.png'
+import Header from "../Components/Header/Second_Nav";
 
 const AboutUs = () => {
   return (
-    <div className=" my-24">
-      <div className="aboutUsSvg rounded-full flex items-center justify-center relative mx-auto">
+    <div className="">
+    <Header />
+      <div className="aboutUsSvg pt-[6em] rounded-full flex items-center justify-center relative mx-auto">
         <div className="aboutusLogo">
           <AboutUsSvg />
           <div className="absolute top-1/2 -translate-y-1/2">
