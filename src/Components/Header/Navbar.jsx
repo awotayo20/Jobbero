@@ -3,7 +3,7 @@ import { MdOutlineMenu } from "react-icons/md";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import JobberoLogo from "../../assets/jobberoLogo.png";
-// import SideNavMobile from "./sidenavmobile";
+import SideNavMobile from "./sidenavmobile";
 
 const Navbar = ({ children }) => {
   const [showmenu, setShowmenu] = useState(false);
@@ -33,17 +33,16 @@ const Navbar = ({ children }) => {
   return (
     <div
       className={`${
-        isScrolled || sideNav ? "bg-white text-[#0074CC]" : "bg-transparent text-white"
-      } fixed h-[60px] md:h-[90px] w-full z-50 flex flex-col`}
+        isScrolled || sideNav
+          ? "bg-white text-[#0074CC]"
+          : "bg-transparent text-white"
+      } fixed h-[65px] md:h-[90px] w-full z-50 flex flex-col`}
     >
-      <nav
-        className="navbar md:px-[3em] pt-8 top-[10vh] self-center"
-      >
-        <div>
-          <Link to="/">
-            <img src={JobberoLogo} alt="" className="" />
-          </Link>
-        </div>
+      <nav className="navbar px-3 md:px-[3em] md:pt-5 pt-1 top-[10vh] self-center">
+        <Link to="/">
+          <img src={JobberoLogo} alt="" className="" />
+        </Link>
+
         <div className="w-full gap-7 lg:gap-12 hidden md:flex justify-center items-start">
           <ul className="flex gap-12">
             <li className="underline underline-offset-8 decoration-4">
@@ -77,17 +76,14 @@ const Navbar = ({ children }) => {
           </button>
         </div>
 
-        <div
-          onClick={() => setSideNav(!sideNav)}
-          className="text-white flex md:hidden"
-        >
+        <div onClick={() => setSideNav(!sideNav)} className="flex md:hidden">
           {sideNav ? (
             <IoCloseSharp className="text-[3vh]" />
           ) : (
             <MdOutlineMenu className="text-[3vh]" />
           )}
         </div>
-        {/* {sideNav && <SideNavMobile />} */}
+        {sideNav && <SideNavMobile />}
       </nav>
     </div>
   );
