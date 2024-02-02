@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <div className="bg-[#001F3F] w-full">
-        <Header />
+        <Header color=""/>
         <div className="w-full pt-[8em] mx-auto">
           <div className="py-4 mx-4 px-9 bg-[#001F3F] rounded-2xl">
             <HappyJobbero />
