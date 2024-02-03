@@ -14,7 +14,7 @@ const Home = () => {
       <div className="bg-[#001F3F] w-full">
         <Header color="" />
         <div className="w-full pt-[8em] lg:p-0 mx-auto">
-          <div className=" mx-4 px-9 bg-[#001F3F] rounded-2xl h-screen">
+          <div className=" mx-4 px-9 bg-[#001F3F] rounded-2xl lg:h-screen">
             <HappyJobbero />
           </div>
 
