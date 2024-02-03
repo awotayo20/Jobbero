@@ -1,6 +1,6 @@
 import happyJobbero from '../../assets/happyJobbero.png'
-
 import olubunmi from '../../assets/olubunmiPic.png'
+import { Typewriter, Cursor } from 'react-simple-typewriter'
 
 import {
   AppleIcon,
@@ -21,7 +21,16 @@ export const HappyJobbero = () => {
           Job Search Simplified
         </h2>
         <p className="text-center lg:text-left text-base lg:text-xl mt-2">
-          One Platform, Countless Opportunities, Guaranteed Success
+          One Platform, Countless Opportunities, Guaranteed{' '}
+          <span className="text-[#FFBF00] font-semibold">
+            <Typewriter
+              words={['Success', 'Triumph', 'Breakthrough']}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={150}
+            />
+          </span>
         </p>
         <div className="mt-9 bg-white rounded-lg lg:rounded-[30px] px-4 py-4 lg:flex justify-between">
           <div className="lg:flex gap-7 w-full">
