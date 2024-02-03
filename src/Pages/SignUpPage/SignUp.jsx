@@ -1,12 +1,15 @@
 import { RegisterForm } from './RegisterForm'
 import JobberoLogo from '../../assets/jobberoLogo.png'
 import Footer from '../../Components/Footer/index'
+import Navbar from '../../Components/Header/Navbar'
 
 const SignUp = () => {
   return (
     <>
+      <div className=" h-[65px] md:h-[90px] w-full bg-[#001F3F]">
+        <Navbar />
+      </div>
       <div className="max-w-[1385px] mx-auto px-9">
-        <img src={JobberoLogo} alt="Jobbero Logo" />
         <h3 className="text-3xl font-Poppins font-semibold text-[#001F3F]">
           Let’s create your account!
         </h3>
