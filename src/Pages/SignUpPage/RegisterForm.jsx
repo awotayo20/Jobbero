@@ -14,6 +14,7 @@ export const RegisterForm = () => {
       borderColor: '#001F3F80',
       padding: '12px 8px',
       boxShadow: state.isFocused ? null : null,
+      fontSize: '16px',
     }),
 
     valueContainer: (provided, state) => ({
@@ -42,7 +43,7 @@ export const RegisterForm = () => {
   ]
   return (
     <form onSubmit={handleSubmit(handleRegistration)}>
-      <div className="grid grid-cols-7 items-center">
+      <div className="lg:grid lg:grid-cols-7 items-center">
         <div className=" grid col-span-4 gap-5 w-full max-w-[650px] mx-auto">
           <div className="input-container">
             <label className="label">Name</label>
@@ -142,7 +143,7 @@ export const RegisterForm = () => {
           </div>
         </div>
         <div className=" col-span-3  ">
-          <div className="relative">
+          <div className="hidden lg:block relative">
             <SignUpPicture />
           </div>
           <div className="  flex justify-center flex-col items-center">

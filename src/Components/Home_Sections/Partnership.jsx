@@ -11,7 +11,7 @@ const Partnership = () => {
       <h4 className="text-[#001F3F] font-semibold text-2xl text-center py-5">
         The fastest-growing companies use Jobbero
       </h4>
-      <div className="flex md:flex-row flex-wrap justify-around items-center gap-y-7">
+      <div className="flex flex-row flex-wrap justify-around items-center gap-y-7">
         <PartnershipPic img={piggyLogo} alt={'piggyLogo'} />
         <PartnershipPic img={wakanowLogo} alt={'wakanowLogo'} />
         <PartnershipPic img={heyfoodLogo} alt={'heyfoodLogo'} />
