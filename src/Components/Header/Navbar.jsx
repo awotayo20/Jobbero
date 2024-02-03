@@ -1,54 +1,54 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { MdOutlineMenu } from "react-icons/md";
-import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import JobberoLogo from "../../assets/jobberoLogo.png";
-import SideNavMobile from "./sidenavmobile";
+import React, { useCallback, useEffect, useState } from 'react'
+import { MdOutlineMenu } from 'react-icons/md'
+import { IoCloseSharp } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
+import JobberoLogo from '../../assets/jobberoLogo.png'
+import SideNavMobile from './sidenavmobile'
 
 const Navbar = ({ children }) => {
-  const [showmenu, setShowmenu] = useState(false);
-  const [sideNav, setSideNav] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showmenu, setShowmenu] = useState(false)
+  const [sideNav, setSideNav] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const hideMenu = useCallback(() => {
-    setShowmenu(false);
-  }, []);
+    setShowmenu(false)
+  }, [])
 
   const handleScroll = useCallback(() => {
-    const scrollTop = window.scrollY;
+    const scrollTop = window.scrollY
     if (scrollTop > 0) {
-      setIsScrolled(true);
+      setIsScrolled(true)
     } else {
-      setIsScrolled(false);
+      setIsScrolled(false)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll])
 
   return (
     <div
       className={`${
         isScrolled || sideNav
-          ? "bg-white text-[#0074CC]"
-          : "bg-transparent text-white"
-      } fixed h-[65px] md:h-[90px] w-full z-50 flex flex-col justify-center items-center`}
+          ? 'bg-white text-[#0074CC]'
+          : 'bg-transparent text-white'
+      } fixed h-[65px] md:h-[90px] w-full z-50 flex flex-col justify-center items-center top-0`}
     >
       <nav className="navbar px-3 md:px-[3em] top-[10vh] self-center">
         <Link to="/">
           <img src={JobberoLogo} alt="" className="" />
         </Link>
 
-        <div className="w-full gap-7 lg:gap-12 hidden md:flex justify-center items-start">
+        <div className=" w-full gap-7 lg:gap-12 hidden md:flex justify-center items-start font-Poppins">
           <ul className="flex gap-12">
-            <li className="underline underline-offset-8 decoration-4">
+            <li className="underline underline-offset-8 decoration-4 font-Poppins">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className=" font-Poppins font-normal text-base">
               <Link
                 to="about"
                 className="hover:underline underline-offset-8 decoration-4 duration-200"
@@ -56,7 +56,7 @@ const Navbar = ({ children }) => {
                 About Us
               </Link>
             </li>
-            <li>
+            <li className=" font-Poppins font-normal text-base">
               <Link
                 to="contact"
                 className="hover:underline underline-offset-8 decoration-4 duration-200"
@@ -86,7 +86,7 @@ const Navbar = ({ children }) => {
         {sideNav && <SideNavMobile />}
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
