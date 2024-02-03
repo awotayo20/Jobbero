@@ -106,7 +106,7 @@ export const FeatureJobsCard = ({
   sponsorship,
 }) => {
   return (
-    <div className="JobCard cursor-pointer bg-white p-4 rounded-xl duration-500">
+    <div className="JobCard cursor-pointer bg-white h-64 p-4 rounded-xl duration-500">
       <div className="flex justify-between h-full">
         <div className="flex flex-col justify-between gap-4">
           <div className="flex flex-col items-start">
