@@ -32,10 +32,10 @@ export const HappyJobbero = () => {
             />
           </span>
         </p>
-        <div className="mt-9 bg-white rounded-lg lg:rounded-[30px] px-4 py-4 lg:flex justify-between">
-          <div className="lg:flex gap-7 w-full">
+        <div className="mt-5 lg:pl-6  bg-white rounded-lg lg:rounded-[30px] px-4 py-2 lg:flex justify-between">
+          <div className="lg:flex gap-5 w-full">
             <div>
-              <label className="text-[#001F3F] font-Poppins font-semibold text-lg block mb-[14px]">
+              <label className="text-[#001F3F] font-Poppins font-semibold text-base block mb-[5px]">
                 Location
               </label>
               <input
@@ -48,7 +48,7 @@ export const HappyJobbero = () => {
             </div>
             <div className="bg-black border-[1px] w-full lg:w-auto"></div>
             <div>
-              <label className="text-[#001F3F] font-Poppins font-semibold text-xl block mb-[14px]">
+              <label className="text-[#001F3F] font-Poppins font-semibold text-base block mb-[5px]">
                 Type
               </label>
               <input
@@ -64,7 +64,7 @@ export const HappyJobbero = () => {
             Explore Now
           </button>
         </div>
-        <div className="my-4 hidden md:flex justify-center gap-3 text-xs lg:text-base">
+        <div className="my-4 hidden md:flex gap-3 text-xs lg:text-base">
           <button className="py-[6px] px-4 rounded-full border-white border-[1.5px]">
             200+ Visa Sponsorship Jobs
           </button>

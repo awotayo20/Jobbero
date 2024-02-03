@@ -38,6 +38,7 @@ body {
 
 .JobCard:hover {
   background: rgba(0, 116, 204, 0.5);
+  aspect-ratio: 1;
 }
 
 .custom-file-input-cv::-webkit-file-upload-button {
