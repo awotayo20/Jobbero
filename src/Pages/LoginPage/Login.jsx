@@ -4,10 +4,14 @@ import smiley from '../../assets/smiley.png'
 import captcha from '../../assets/captcha.png'
 import '../../Styles/login.css'
 import Footer from '../../Components/Footer/index'
+import Navbar from '../../Components/Header/Navbar'
 
 const Login = () => {
   return (
     <>
+      <div className=" h-[65px] md:h-[90px] w-full bg-[#001F3F] relative z-[9999]">
+        <Navbar />
+      </div>
       <div className="container">
         <section className="login-form">
           <h1>We are glad to see you again!</h1>
@@ -27,12 +31,7 @@ const Login = () => {
               <input type="checkbox" name="checkbox" />
               <div>Remember me</div>
             </label>
-            <div className="captcha-box">
-              <label className="captcha check">
-                <input type="checkbox" name="checkbox" />
-                <img src={captcha} alt="" />
-              </label>
-            </div>
+
             <button className="login-btn">Log In</button>
             <h3>
               Don't have an account?<span> Sign Up</span>
@@ -43,7 +42,9 @@ const Login = () => {
           <img src={smiley} alt="" />
         </section>
       </div>
-      <Footer />
+      <div className="w-full bg-[#001F3F]">
+        <Footer />
+      </div>
     </>
   )
 }

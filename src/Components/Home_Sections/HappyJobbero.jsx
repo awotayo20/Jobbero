@@ -16,23 +16,25 @@ import {
 export const HappyJobbero = () => {
   return (
     <div className="lg:grid grid-cols-6 items-center h-[100%]">
-      <div className="text-white font-Poppins w-full col-span-4">
-        <h2 className="font-bold text-center md:text-left text-3xl lg:text-5xl">
-          Job Search Simplified
-        </h2>
-        <p className="text-center lg:text-left text-base lg:text-xl mt-2">
-          One Platform, Countless Opportunities, Guaranteed{' '}
-          <span className="text-[#FFBF00] font-semibold">
-            <Typewriter
-              words={['Success', 'Triumph', 'Breakthrough']}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={150}
-            />
-          </span>
-        </p>
-        <div className="mt-5 lg:pl-6  bg-white rounded-lg lg:rounded-[30px] px-4 py-2 lg:flex justify-between">
+      <div className="text-white font-Poppins col-span-4 w-[90%] mx-auto">
+        <div>
+          <h2 className="font-bold text-center md:text-left text-3xl lg:text-5xl">
+            Job Search Simplified
+          </h2>
+          <p className="text-center lg:text-left text-base lg:text-xl mt-2">
+            One Platform, Countless Opportunities, Guaranteed{' '}
+            <span className="text-[#FFBF00] font-semibold">
+              <Typewriter
+                words={['Success', 'Triumph', 'Breakthrough']}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={150}
+              />
+            </span>
+          </p>
+        </div>
+        <div className=" my-7 lg:pl-6  bg-white rounded-lg lg:rounded-[30px] px-4 py-2 lg:flex justify-between w-full">
           <div className="lg:flex gap-5 w-full">
             <div>
               <label className="text-[#001F3F] font-Poppins font-semibold text-base block mb-[5px]">
