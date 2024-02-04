@@ -12,8 +12,8 @@ const Records = () => {
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="75"
-              height="74"
+              width="30"
+              height="30"
               viewBox="0 0 77 74"
               fill="none"
             >
@@ -30,8 +30,8 @@ const Records = () => {
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="58"
-              height="73"
+              width="30"
+              height="30"
               viewBox="0 0 58 73"
               fill="none"
             >
@@ -52,8 +52,8 @@ const Records = () => {
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="79"
-              height="79"
+              width="30"
+              height="30"
               viewBox="0 0 79 79"
               fill="none"
             >
@@ -73,8 +73,8 @@ const Records = () => {
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="58"
-              height="73"
+              width="30"
+              height="30"
               viewBox="0 0 58 73"
               fill="none"
             >
@@ -91,8 +91,8 @@ const Records = () => {
           svg={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="75"
-              height="73"
+              width="30"
+              height="30"
               viewBox="0 0 75 73"
               fill="none"
             >
@@ -135,9 +135,9 @@ export default Records
 export const RecordCard = ({ svg, counts, subject }) => {
   return (
     <div>
-      <div className="bg-white flex flex-col justify-between items-center py-7 px-16 lg:gap-1 rounded-2xl mx-4 lg:rounded-full">
+      <div className="bg-white flex flex-col justify-between items-center py-5 px-5 lg:gap-1 rounded-2xl mx-4 lg:rounded-full">
         <div className="">{svg}</div>
-        <h4 className="text-[#0074CC] font-Poppins font-bold text-2xl text-center w-full">
+        <h4 className="text-[#0074CC] font-Poppins font-bold text-lg text-center w-full">
           {counts}
         </h4>
         <p className="text-[#001F3F] font-semibold text-sm text-center">

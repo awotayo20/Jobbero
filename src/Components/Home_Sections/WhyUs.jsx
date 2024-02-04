@@ -19,7 +19,7 @@ const WhyUs = () => {
             className="absolute top-2/3 left-1/4 z-10"
           />
         </div>
-        <div className="relative z-20 top-5">
+        <div className="relative z-20 top-20">
           <h2 className="font-bold text-4xl font-Poppins text-[#001F3F] text-center">
             WHY CHOOSE US?
           </h2>
@@ -46,8 +46,8 @@ const WhyUs = () => {
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="52"
-                    height="74"
+                    width="45"
+                    height="45"
                     viewBox="0 0 52 74"
                     fill="none"
                   >
@@ -71,8 +71,8 @@ const WhyUs = () => {
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="74"
-                    height="74"
+                    width="45"
+                    height="45"
                     viewBox="0 0 74 74"
                     fill="none"
                   >
@@ -99,10 +99,10 @@ export default WhyUs
 export const WhyUsTab = ({ icon, text }) => {
   return (
     <div className="flex">
-      <div className="bg-[#001F3F] border-[1.5px] border-[#0074CC] py-4 px-12 flex items-center rounded-l-full">
+      <div className="bg-[#001F3F] border-[1.5px] border-[#0074CC] py-4 px-5 flex items-center rounded-l-full">
         {icon}
       </div>
-      <div className="bg-[#0074CC] py-3 pl-5 pr-12 rounded-r-full flex items-center">
+      <div className="bg-[#0074CC] py-3 pl-5 pr-4 rounded-r-full flex items-center">
         <p className="max-w-[170px] text-white font-Poppins font-normal text-sm">
           {text}
         </p>
