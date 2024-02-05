@@ -57,7 +57,9 @@ const ForgetPassword = () => {
           <SmileySVG />
         </div>
       </div>
-      <Footer />
+      <div className="bg-[#001F3F]">
+        <Footer />
+      </div>
     </>
   )
 }

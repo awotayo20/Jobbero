@@ -1,14 +1,16 @@
 import HijabLady from './HijabLady'
-import Header from "../../Components/Header/Second_Nav";
+import Navbar from '../../Components/Header/Navbar'
 
 const ContactUs = () => {
   return (
     <>
-    <Header />
-      <div className="lg:grid grid-cols-2 mt-8 items-center">
-        <div className="w-[90%] mx-auto">
-          <h2 className="text-[#001F3F] font-semibold text-3xl">Contact Us</h2>
-          <div>
+      <div className="h-[90px] bg-[#001F3F]">
+        <Navbar />
+      </div>
+      <div className="lg:grid grid-cols-2 mt-12 items-center">
+        <div className="w-[90%] max-w-[450px] mx-auto">
+          <h2 className="text-[#001F3F] font-semibold text-2xl">Contact Us</h2>
+          <div className="my-6">
             <ContactUsForm />
           </div>
         </div>
@@ -32,7 +34,7 @@ export const ContactUsForm = () => {
             <input type="text" placeholder="Name" required />
           </div>
           <div className="input-container">
-            <label>Email</label>
+            <label className="">Email</label>
             <input type="email" placeholder="example@gmail.com" required />
           </div>
           <div className="input-container">

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 
 import smiley from '../../assets/smiley.png'
 import captcha from '../../assets/captcha.png'
-import '../../Styles/login.css'
 import Footer from '../../Components/Footer/index'
 import Navbar from '../../Components/Header/Navbar'
 
