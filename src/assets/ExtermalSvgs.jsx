@@ -1,8 +1,8 @@
 export const Periwinkle = (props) => {
   return (
     <svg
-      width="218"
-      height="224"
+      width="150"
+      height="150"
       viewBox="0 0 218 224"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -788,8 +788,8 @@ export const YellowBall = () => {
 export const VerifyMarked = () => {
   return (
     <svg
-      width="67"
-      height="81"
+      width="45"
+      height="45"
       viewBox="0 0 67 81"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

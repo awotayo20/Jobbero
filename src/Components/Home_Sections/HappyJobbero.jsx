@@ -66,7 +66,7 @@ export const HappyJobbero = () => {
             Explore Now
           </button>
         </div>
-        <div className="my-4 hidden md:flex gap-3 text-xs lg:text-base">
+        <div className="my-4 hidden md:flex gap-2 text-xs lg:text-sm">
           <button className="py-[6px] px-4 rounded-full border-white border-[1.5px]">
             200+ Visa Sponsorship Jobs
           </button>

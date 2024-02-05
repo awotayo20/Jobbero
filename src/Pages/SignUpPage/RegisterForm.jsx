@@ -160,7 +160,7 @@ export const RegisterForm = () => {
             <textarea
               name=""
               id=""
-              cols="50"
+              cols="35"
               rows="6"
               className="boreder-[#001F3F80] border-[2px] rounded-xl outline-none p-4"
             ></textarea>
