@@ -68,10 +68,10 @@ const Navbar = ({ children }) => {
         </div>
 
         <div className="icon md:flex hidden w-[27%] justify-around  items-center">
-          <button className="py-2 px-6 md:flex hidden border-[3px] border-[#0074CC] rounded-full">
+          <button className="py-[6px] text-sm px-4 md:flex hidden border-[3px] border-[#0074CC] rounded-full">
             <Link to="login">Login</Link>
           </button>
-          <button className="py-2 md:flex hidden bg-[#0074CC] text-white px-6 border-[3px] border-[#0074CC] rounded-full">
+          <button className="py-[6px] text-sm md:flex hidden bg-[#0074CC] text-white px-4 border-[3px] border-[#0074CC] rounded-full">
             <Link to="signup">Sign Up</Link>
           </button>
         </div>
