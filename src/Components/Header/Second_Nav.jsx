@@ -1,34 +1,34 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { MdOutlineMenu } from "react-icons/md";
-import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import JobberoLogo from "../../assets/jobberoLogo.png";
-import SideNavMobile from "./sidenavmobile";
+import React, { useCallback, useEffect, useState } from 'react'
+import { MdOutlineMenu } from 'react-icons/md'
+import { IoCloseSharp } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
+import JobberoLogo from '../../assets/jobberoLogo.png'
+import SideNavMobile from './sidenavmobile'
 
 const Navbar = ({ children }) => {
-  const [showmenu, setShowmenu] = useState(false);
-  const [sideNav, setSideNav] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showmenu, setShowmenu] = useState(false)
+  const [sideNav, setSideNav] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const hideMenu = useCallback(() => {
-    setShowmenu(false);
-  }, []);
+    setShowmenu(false)
+  }, [])
 
   const handleScroll = useCallback(() => {
-    const scrollTop = window.scrollY;
+    const scrollTop = window.scrollY
     if (scrollTop > 0) {
-      setIsScrolled(true);
+      setIsScrolled(true)
     } else {
-      setIsScrolled(false);
+      setIsScrolled(false)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll])
 
   return (
     <div
@@ -82,7 +82,7 @@ const Navbar = ({ children }) => {
         {sideNav && <SideNavMobile />} */}
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

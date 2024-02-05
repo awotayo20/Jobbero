@@ -49,13 +49,13 @@ const Footer = () => {
             <li className="text-white font-Poppins font-normal py-3">
               <a href="#">About Us</a>
             </li>
-            <li className="text-white font-Poppins font-normal text-xl py-3">
+            <li className="text-white font-Poppins font-normal py-3">
               <a href="#">Privacy policy</a>
             </li>
-            <li className="text-white font-Poppins font-normal text-xl py-3">
+            <li className="text-white font-Poppins font-normal py-3">
               <a href="#">Terms</a>
             </li>
-            <li className="text-white font-Poppins font-normal text-xl py-3">
+            <li className="text-white font-Poppins font-normal py-3">
               <a href="#">Sitemap</a>
             </li>
           </ul>
