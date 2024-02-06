@@ -17,7 +17,7 @@ const Footer = () => {
             className="hover:cursor-pointer"
           />
           <div>
-            <p className="text-center lg:text-left text-white font-Poppins font-normal text-xl max-w-[478px] mt-4">
+            <p className="text-center lg:text-left text-white font-Poppins font-normal text-lg max-w-[478px] mt-4">
               A centralized platform where user can seamlessly search for
               relevant job opportunities and apply with ease.
             </p>

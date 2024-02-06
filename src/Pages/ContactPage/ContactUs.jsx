@@ -1,5 +1,6 @@
 import HijabLady from './HijabLady'
 import Navbar from '../../Components/Header/Navbar'
+import Footer from '../../Components/Footer'
 
 const ContactUs = () => {
   return (
@@ -17,6 +18,9 @@ const ContactUs = () => {
         <div className="hidden lg:block">
           <HijabLady />
         </div>
+      </div>
+      <div className="w-full mt-80 bg-[#001F3F]">
+        <Footer />
       </div>
     </>
   )
