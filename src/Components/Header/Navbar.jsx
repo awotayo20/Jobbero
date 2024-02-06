@@ -50,7 +50,7 @@ const Navbar = ({ children }) => {
             </li>
             <li className=" font-Poppins font-normal text-base">
               <Link
-                to="about"
+                to="/about"
                 className="hover:underline underline-offset-8 decoration-4 duration-200"
               >
                 About Us
