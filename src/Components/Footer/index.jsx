@@ -4,6 +4,7 @@ import TwitterIcon from '../../assets/Twitter.png'
 import InstagramIcon from '../../assets/Instagram.png'
 import LinkedInIcon from '../../assets/LinkedInIcon.png'
 import { DownloadApp } from '../Home_Sections/HappyJobbero'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -47,16 +48,16 @@ const Footer = () => {
         <div>
           <ul className="text-xl text-center lg:text-left">
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="/about">About Us</a>
+              <Link to={'/about'}>About Us</Link>
             </li>
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="/privacy-policy">Privacy policy</a>
+              <Link to={'/privacy-policy'}>Privacy policy</Link>
             </li>
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="/terms-condition">Terms </a>
+              <Link to={'/terms-condition'}>Terms </Link>
             </li>
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="#">Sitemap</a>
+              <Link to="#">Sitemap</Link>
             </li>
           </ul>
         </div>
