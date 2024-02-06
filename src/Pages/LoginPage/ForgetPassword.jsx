@@ -1,6 +1,7 @@
 import ReCAPTCHA from 'react-google-recaptcha'
 import SmileySVG from './SmileySVG.jsx'
 import Footer from '../../Components/Footer/index.jsx'
+import Navbar from '../../Components/Header/Navbar.jsx'
 
 const ForgetPassword = () => {
   const reCAPTCHAChange = (value) => {
@@ -9,44 +10,41 @@ const ForgetPassword = () => {
 
   return (
     <>
-      <div className="lg:grid grid-cols-2 justify-center items-center my-16 lg:my-0">
+      <div className="h-[90px] bg-[#001F3F]">
+        <Navbar />
+      </div>
+      <div className="lg:grid grid-cols-2 justify-center items-center my-16 lg:my-0 max-w-[1024px] mx-auto">
         <div className="w-[80%] mx-auto">
-          <h3 className="text-[#001F3F] font-semibold text-3xl font-Poppins">
+          <h3 className="text-[#001F3F] font-semibold text-2xl font-Poppins">
             Forgot Password
           </h3>
-          <p className="text-[#001F3F] text-2xl font-Poppins font-normal mt-3 mb-8">
+          <p className="text-[#001F3F] text-xl font-Poppins font-normal mt-3 mb-8">
             Enter your email address and we will send you a link to update your
             password
           </p>
-          <div>
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Email"
-              className="rounded-[20px] border-[#001F3F80] border-[1.5px] p-4 w-full"
-            />
+          <div className="input-container">
+            <input type="email" name="email" required placeholder="Email" />
           </div>
-          <div className="mt-20 mx-12">
-            <div className=" scale-110">
+          <div className="mt-9">
+            <div className="">
               <ReCAPTCHA
                 sitekey="Your client site key"
                 onChange={reCAPTCHAChange}
               />
             </div>
           </div>
-          <div className=" grid grid-cols-4 items-center mt-9">
+          <div className=" lg:grid grid-cols-4 items-center mt-9">
             <div className=" col-span-3">
               <button
                 type="submit"
-                className="w-full p-8 bg-[#001F3F] rounded-2xl text-white font-Poppins font-semibold text-2xl "
+                className="w-[90%] max-w-96 py-6 text-white bg-[#001F3F] flex items-center justify-center rounded-[15px] mx-auto text-xl font-semibold font-Poppins"
               >
                 Send
               </button>
             </div>
             <div>
               <a href="/login">
-                <button className="w-full  rounded-2xl text-[#0074CC] font-Poppins font-semibold text-2xl ">
+                <button className="w-full mt-5 lg:mt-0  rounded-2xl text-[#0074CC] font-Poppins font-semibold text-2xl ">
                   cancel
                 </button>
               </a>

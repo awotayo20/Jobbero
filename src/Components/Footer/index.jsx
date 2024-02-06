@@ -47,13 +47,13 @@ const Footer = () => {
         <div>
           <ul className="text-xl text-center lg:text-left">
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="#">About Us</a>
+              <a href="/about">About Us</a>
             </li>
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="#">Privacy policy</a>
+              <a href="/privacy-policy">Privacy policy</a>
             </li>
             <li className="text-white font-Poppins font-normal py-3">
-              <a href="#">Terms</a>
+              <a href="/terms-condition">Terms </a>
             </li>
             <li className="text-white font-Poppins font-normal py-3">
               <a href="#">Sitemap</a>

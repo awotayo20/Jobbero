@@ -1,11 +1,83 @@
+import { Subscribe } from './Subscribe'
 import JobberoLogo from '../assets/jobberoLogo.png'
-import Header from "../Components/Header/Second_Nav";
+import Navbar from '../Components/Header/Navbar'
+import Footer from '../Components/Footer'
 
 const AboutUs = () => {
   return (
-    <div className="">
-    <Header />
-      <div className="aboutUsSvg pt-[6em] rounded-full flex items-center justify-center relative mx-auto">
+    <>
+      <div className="h-[90px] bg-[#001F3F]">
+        <Navbar />
+      </div>
+      <UsSvgPng JobberoLogo={JobberoLogo} title={'OUR STORY'} />
+      <div className="my-11 max-w-[1024px] mx-auto">
+        <div>
+          <p className="max-w-[1024px] mx-auto font-normal text-xl">
+            Welcome to Jobbero, where the pursuit of meaningful careers is more
+            than just a mission—it's our heartbeat. Born from the belief that
+            every professional journey is a personal odyssey, we strive to be
+            more than a job search platform; we aim to be your ally in
+            navigating the winding paths of your career.
+          </p>
+        </div>
+
+        <div className="AboutUsIllustrator w-full max-w-[900px] h-[590px] mx-auto rounded-[50px] my-16 relative">
+          <div className="bg-[#0074CC] max-w-[570px] p-4 pr-7 text-white absolute bottom-0 right-0 rounded-ee-[50px]">
+            <h3 className="text-3xl font-semibold">
+              Your Career, Our Commitment:{' '}
+            </h3>
+            <p className="text-xl font-normal">
+              Unleash Your Potential with Guaranteed Interviews!
+            </p>
+          </div>
+        </div>
+
+        <div className="flex max-w-[900px] justify-between mx-auto">
+          <div className="flex max-w-[420px] items-center border-[#0074CC] border-[0.6px] rounded-[19px]">
+            <div className="bg-[#0074CC] px-5 py-9 rounded-s-[20px]">
+              <YJourneySvg />
+            </div>
+            <div className="text-lg px-3  ">
+              <h6 className="font-semibold">Empowering Your Journey: </h6>
+              <p className="font-normal">
+                Your Aspirations Are at the Heart of Our Platform. Your Success
+                Is Our Success.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex max-w-[420px] items-center border-[#0074CC] border-[0.6px] rounded-[20px]">
+            <div className="bg-[#0074CC] px-5 py-9 rounded-s-[19px]">
+              <YSafetySvg />
+            </div>
+            <div className="text-lg px-3  ">
+              <h6 className="font-semibold">Verified for Your Safety: </h6>
+              <p className="font-normal">
+                Our Promise to Protect You from Job Scams by Validating Every
+                Employer.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p className=" text-center text-lg my-9">
+          We are committed to bridging the unemployment deficit in Nigeria and
+          beyond
+        </p>
+        <Subscribe />
+      </div>
+      <div className="w-full bg-[#001F3F]">
+        <Footer />
+      </div>
+    </>
+  )
+}
+
+export default AboutUs
+
+export function UsSvgPng({ JobberoLogo, title }) {
+  return (
+    <>
+      <div className="aboutUsSvg rounded-full flex items-center justify-center relative mx-auto">
         <div className="aboutusLogo">
           <AboutUsSvg />
           <div className="absolute top-1/2 -translate-y-1/2">
@@ -13,60 +85,10 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div>
-        <h1 className="font-semibold text-4xl text-center my-3">OUR STORY</h1>
-        <p className="max-w-[1024px] mx-auto font-normal text-2xl">
-          Welcome to Jobbero, where the pursuit of meaningful careers is more
-          than just a mission—it's our heartbeat. Born from the belief that
-          every professional journey is a personal odyssey, we strive to be more
-          than a job search platform; we aim to be your ally in navigating the
-          winding paths of your career.
-        </p>
-      </div>
-
-      <div className="AboutUsIllustrator w-full max-w-[900px] h-[590px] mx-auto rounded-[50px] my-16 relative">
-        <div className="bg-[#0074CC] max-w-[570px] p-4 pr-7 text-white absolute bottom-0 right-0 rounded-ee-[50px]">
-          <h3 className="text-3xl font-semibold">
-            Your Career, Our Commitment:{' '}
-          </h3>
-          <p className="text-xl font-normal">
-            Unleash Your Potential with Guaranteed Interviews!
-          </p>
-        </div>
-      </div>
-
-      <div className="flex max-w-[900px] justify-between mx-auto">
-        <div className="flex max-w-[420px] items-center border-[#0074CC] border-[0.6px] rounded-[19px]">
-          <div className="bg-[#0074CC] px-5 py-9 rounded-s-[20px]">
-            <YJourneySvg />
-          </div>
-          <div className="text-xl px-3  ">
-            <h6 className="font-semibold">Empowering Your Journey: </h6>
-            <p className="font-normal">
-              Your Aspirations Are at the Heart of Our Platform. Your Success Is
-              Our Success.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex max-w-[420px] items-center border-[#0074CC] border-[0.6px] rounded-[20px]">
-          <div className="bg-[#0074CC] px-5 py-9 rounded-s-[19px]">
-            <YSafetySvg />
-          </div>
-          <div className="text-xl px-3  ">
-            <h6 className="font-semibold">Verified for Your Safety: </h6>
-            <p className="font-normal">
-              Our Promise to Protect You from Job Scams by Validating Every
-              Employer.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h1 className="font-semibold text-4xl text-center my-3">{title}</h1>
+    </>
   )
 }
-
-export default AboutUs
 
 export const AboutUsSvg = () => {
   return (
