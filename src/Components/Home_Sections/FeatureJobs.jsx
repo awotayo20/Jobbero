@@ -106,13 +106,13 @@ export const FeatureJobsCard = ({
   sponsorship,
 }) => {
   return (
-    <div className="JobCard cursor-pointer bg-white h-64 p-4 rounded-xl duration-500">
+    <div className="JobCard cursor-pointer h-64 p-4 rounded-xl duration-500 bg-white hover:bg-[#0074CC]">
       <div className="flex justify-between h-full">
         <div className="flex flex-col justify-between gap-4">
           <div className="flex flex-col items-start">
-            <h2 className="font-medium text-2xl">{title}</h2>
-            <p className="font-normal text-lg">{amount}</p>
-            <div className="flex items-start gap-1">
+            <h2 className="font-medium text-xl">{title}</h2>
+            <p className="font-normal text-base">{amount}</p>
+            <div className="flex items-start gap-1 mx-4">
               <button className="text-white bg-[#FFBF00] rounded-full px-2 py-[2px] text-xs font-medium">
                 {location}
               </button>
@@ -125,8 +125,8 @@ export const FeatureJobsCard = ({
           <div className="flex gap-2">
             <img src={CompanyLogo} alt="elasticLogo" />
             <div>
-              <h4 className="font-medium text-lg">{companyName}</h4>
-              <p>{companyLocation}</p>
+              <h4 className="font-medium text-base">{companyName}</h4>
+              <p className="text-sm">{companyLocation}</p>
             </div>
           </div>
         </div>
