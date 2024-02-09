@@ -4,6 +4,7 @@ import CreativeSolutions from '../../assets/CreativeSolutions.png'
 import BsingWears from '../../assets/BsingWears.png'
 import DigitalSolutions from '../../assets/DigitalSolutions.png'
 import TandoriHotels from '../../assets/TandoriHotels.png'
+import { Navigate } from 'react-router-dom'
 
 const FeatureJobs = () => {
   return (

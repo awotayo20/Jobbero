@@ -1,6 +1,6 @@
 import happyJobbero from '../../assets/happyJobbero.png'
 import olubunmi from '../../assets/olubunmiPic.png'
-import { Typewriter, Cursor } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter'
 
 import {
   AppleIcon,
@@ -63,7 +63,7 @@ export const HappyJobbero = () => {
             </div>
           </div>
           <button className="bg-[#0074CC] mt-6 md:mt-0 text-lg font-semibold px-6 rounded-[18px] w-full lg:w-[200px] py-4 lg:py-0">
-            Explore Now
+            <Link to={'/job-search-result'}>Explore Now</Link>
           </button>
         </div>
         <div className="my-4 hidden md:flex gap-2 text-xs lg:text-sm">
@@ -92,6 +92,7 @@ export const HappyJobbero = () => {
 }
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const HappyJobberoPic = () => {
   return (

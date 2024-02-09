@@ -79,9 +79,9 @@ const JobSearch = () => {
       </div>
       <div className="my-8">
         <h2 className=" font-Poppins font-semibold text-2xl">Search Result</h2>
-        <div>
-          <SearchResult />
-        </div>
+      </div>
+      <div>
+        <SearchResult />
       </div>
     </>
   )

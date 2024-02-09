@@ -11,6 +11,8 @@ import ResetPassword from './Pages/LoginPage/ResetPassword'
 import Privacy from './Pages/Privacy'
 import TermsAndCondition from './Pages/TermsAndCondition'
 import JobSearch from './Pages/Job Pages/JobSearch'
+import Application from './Pages/Job Pages/Application'
+import ApplicationSuccess from './Pages/Job Pages/ApplicationSuccess'
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="privacy-policy" element={<Privacy />} />
         <Route path="terms-condition" element={<TermsAndCondition />} />
         <Route path="job-search-result" element={<JobSearch />} />
+        <Route path="application" element={<Application />} />
+        <Route path="application-successful" element={<ApplicationSuccess />} />
       </Routes>
     </>
   )
