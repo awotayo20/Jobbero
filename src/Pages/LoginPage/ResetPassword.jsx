@@ -1,6 +1,6 @@
 import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Header/Navbar'
-import SmileySVG from './SmileySVG'
+import SignupSvg from '../../assets/SignupSvg.svg'
 
 const ResetPassword = () => {
   return (
@@ -31,7 +31,7 @@ const ResetPassword = () => {
             </button>
           </div>
           <div className="flex">
-            <SmileySVG />
+            <img src={SignupSvg} alt="" />
           </div>
         </div>
       </form>

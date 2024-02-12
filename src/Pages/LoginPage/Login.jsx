@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom'
-
-import smiley from '../../assets/smiley.png'
-import captcha from '../../assets/captcha.png'
+import SmileySvg from '../../assets/SmileySvg.svg'
 import Footer from '../../Components/Footer/index'
 import Navbar from '../../Components/Header/Navbar'
 import { useForm } from 'react-hook-form'
-import SmileySVG from './SmileySVG'
 
 const Login = () => {
   const {
@@ -56,7 +53,7 @@ const Login = () => {
             </div>
           </div>
           <div className="hidden lg:flex">
-            <SmileySVG />
+            <img src={SmileySvg} alt="" />
           </div>
         </div>
       </form>

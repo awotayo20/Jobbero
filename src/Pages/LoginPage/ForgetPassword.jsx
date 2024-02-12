@@ -1,5 +1,6 @@
 import ReCAPTCHA from 'react-google-recaptcha'
-import SmileySVG from './SmileySVG.jsx'
+import SignupSvg from '../../assets/SignupSvg.svg'
+
 import Footer from '../../Components/Footer/index.jsx'
 import Navbar from '../../Components/Header/Navbar.jsx'
 
@@ -52,7 +53,7 @@ const ForgetPassword = () => {
           </div>
         </div>
         <div className="hidden lg:block w-[90%] mx-auto">
-          <SmileySVG />
+          <img src={SignupSvg} alt="" />
         </div>
       </div>
       <div className="bg-[#001F3F]">
