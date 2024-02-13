@@ -146,17 +146,14 @@ export const RegisterForm = () => {
             />
           </div>
 
-          <p className="text-[#001F3F] font-medium text-[18px] font-Poppins max-w-[450px]">
-            Would you like your CV to meet international standard? Pricing
-            starts from ₦8,000
+          <p className="text-[#001F3F] font-medium text-[16px] font-Poppins max-w-[450px]">
+            By signing up, you agree to our{' '}
+            <Link to={'/privacy-policy'}>
+              <span className=" font-semibold hover:cursor-pointer">
+                Privacy Policy
+              </span>
+            </Link>
           </p>
-
-          <div className="">
-            <input type="checkbox" name="" id="" className="m-2" />
-            <label className="font-medium text-[#001F3F]  text-[18px] font-Poppins">
-              Yes I’m in ( A Rep will contact you)
-            </label>
-          </div>
 
           <div className="flex justify-center">
             <div className="">
