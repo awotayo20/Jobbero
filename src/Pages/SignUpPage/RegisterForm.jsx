@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import SignupSvg from '../../assets/SignupSvg.svg'
+import { Link } from 'react-router-dom'
 export const RegisterForm = () => {
   const [errMsg, setErrMsg] = useState('')
   const [successMsg, setSuccessMsg] = useState('')
@@ -64,10 +65,9 @@ export const RegisterForm = () => {
           </Alert>
         </div>
       </div>
-      <div className=" lg:grid lg:grid-cols-7 items-center">
-        <div className=" lg:grid col-span-4 gap-5 w-full max-w-[650px] mx-auto">
+      <div className=" lg:grid lg:grid-cols-2 items-center my-6">
+        <div className=" grid gap-5 w-full max-w-[650px] mx-auto">
           <div className="input-container">
-            <label className="label">First Name</label>
             <input
               type="text"
               name="firstName"
@@ -79,7 +79,6 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="input-container">
-            <label>Last Name</label>
             <input
               type="text"
               name="lastName"
@@ -91,7 +90,16 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="input-container">
-            <label>Password</label>
+            <input
+              type="Email"
+              name="email"
+              onChange={(e) =>
+                setUserData({ ...userData, email: e.target.value })
+              }
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="input-container">
             <input
               type="password"
               name="Password"
@@ -104,7 +112,6 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="input-container">
-            <label>Confirm Password</label>
             <input
               type="password"
               name="Confirm Password"
@@ -117,27 +124,17 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="input-container">
-            <label>Mobile Number</label>
             <input
               type="number"
               name="phoneNumber"
+              placeholder="Mobile Number"
               onChange={(e) => {
                 setUserData({ ...userData, phoneNumber: e.target.value })
               }}
             />
           </div>
+
           <div className="input-container">
-            <label>Email</label>
-            <input
-              type="Email"
-              name="email"
-              onChange={(e) =>
-                setUserData({ ...userData, email: e.target.value })
-              }
-            />
-          </div>
-          <div className="input-container">
-            <label>Role</label>
             <Select
               value={role.value}
               onChange={(value) => {
@@ -145,42 +142,51 @@ export const RegisterForm = () => {
               }}
               options={role}
               styles={selectCustomStyles}
+              placeholder="Role"
             />
           </div>
 
-          <p className="text-[#001F3F] font-medium text-[18px] font-Poppins max-w-[450px] mx-auto pt-14 pb-5">
+          <p className="text-[#001F3F] font-medium text-[18px] font-Poppins max-w-[450px]">
             Would you like your CV to meet international standard? Pricing
             starts from ₦8,000
           </p>
 
-          <div className="my-4">
+          <div className="">
             <input type="checkbox" name="" id="" className="m-2" />
             <label className="font-medium text-[#001F3F]  text-[18px] font-Poppins">
               Yes I’m in ( A Rep will contact you)
             </label>
           </div>
+
+          <div className="flex justify-center">
+            <div className="">
+              <ReCAPTCHA
+                sitekey="Your client site key"
+                onChange={reCAPTCHAChange}
+              />
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="w-[90%] max-w-96 py-6 text-white bg-[#001F3F] flex items-center justify-center rounded-[15px] mx-auto text-xl font-semibold font-Poppins"
+          >
+            Sign Up
+          </button>
+          <div className="flex flex-col justify-center text-center ">
+            <p className="text-[#001F3F] font-Poppins font-normal text-xl">
+              Already have an account?
+              <span className="text-[#FFBF00] font-Poppins text-xl font-semibold mt-4">
+                <Link to={'/login'}> Sign In</Link>
+              </span>
+            </p>
+          </div>
         </div>
-        <div className="hidden lg:block col-span-3">
+        <div className="hidden lg:block">
           <div className="relative">
             <img src={SignupSvg} alt="" />
           </div>
         </div>
       </div>
-
-      <div className="flex justify-center">
-        <div className=" scale-110 mt-12 mb-20">
-          <ReCAPTCHA
-            sitekey="Your client site key"
-            onChange={reCAPTCHAChange}
-          />
-        </div>
-      </div>
-      <button
-        type="submit"
-        className="w-[90%] max-w-96 py-6 text-white bg-[#001F3F] flex items-center justify-center rounded-[15px] mx-auto text-xl font-semibold font-Poppins"
-      >
-        Sign Up
-      </button>
     </form>
   )
 }
