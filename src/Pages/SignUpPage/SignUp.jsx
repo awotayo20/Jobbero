@@ -1,14 +1,23 @@
 import { RegisterForm } from './RegisterForm'
+import { Link, useNavigate } from 'react-router-dom'
+
 import Footer from '../../Components/Footer/index'
 import Navbar from '../../Components/Header/Navbar'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useAuth } from '../../Components/utils/AuthContext'
 
 const SignUp = () => {
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (user) {
+      navigate('/')
+    }
+  }, [])
+
   return (
     <>
-      <div className=" h-[65px] md:h-[90px] w-full bg-[#001F3F] relative z-[9999]">
-        <Navbar />
-      </div>
       <div className="max-w-[1024px] mx-auto my-5 w-full">
         <div className="max-w-[1385px] mx-auto px-9 w-full">
           <h3 className="text-3xl font-Poppins font-semibold text-[#001F3F]">

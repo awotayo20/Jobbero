@@ -1,22 +1,36 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SmileySvg from '../../assets/SmileySvg.svg'
 import Footer from '../../Components/Footer/index'
 import Navbar from '../../Components/Header/Navbar'
 import { useForm } from 'react-hook-form'
+import { useAuth } from '../../Components/utils/AuthContext'
+import { useEffect, useRef } from 'react'
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
+  const navigate = useNavigate()
+  const { user, loginUser } = useAuth()
+
+  const loginForm = useRef(null)
+
+  useEffect(() => {
+    if (user) {
+      navigate('/')
+    }
+  }, [])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const email = loginForm.current.email.value
+    const password = loginForm.current.password.value
+
+    const userInfo = { email, password }
+    loginUser(userInfo)
+  }
 
   return (
     <>
-      <div className=" h-[65px] md:h-[90px] w-full bg-[#001F3F] relative z-[9999]">
-        <Navbar />
-      </div>
-      <form action="">
+      <form onSubmit={handleSubmit} ref={loginForm}>
         <div className="lg:grid grid-cols-2 gap-11 items-center max-w-[1024px] mx-auto my-6">
           <div className="container max-w-[650px] w-[90%] mx-auto">
             <h1 className="mb-6 text-2xl font-Poppins font-semibold text-[#001F3F]">
@@ -24,11 +38,16 @@ const Login = () => {
             </h1>
             <div className="input-container">
               <label>Email</label>
-              <input type="email" name="email" placeholder="Email" />
+              <input type="email" name="email" placeholder="Email" required />
             </div>
             <div className="input-container">
               <label>Password</label>
-              <input type="password" name="password" placeholder="Password" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
             </div>
             <div className="flex justify-between mt-2">
               <div>
@@ -40,7 +59,10 @@ const Login = () => {
               </div>
             </div>
             <div className=" mt-6 flex flex-col gap-6">
-              <button className="w-[90%] max-w-96 py-6 text-white bg-[#001F3F] flex items-center justify-center rounded-[15px] mx-auto text-xl font-semibold font-Poppins">
+              <button
+                type="submit"
+                className="w-[90%] max-w-96 py-6 text-white bg-[#001F3F] flex items-center justify-center rounded-[15px] mx-auto text-xl font-semibold font-Poppins"
+              >
                 Log In
               </button>
               <p className="text-[#001F3F] font-Poppins font-normal text-xl">

@@ -7,9 +7,6 @@ import JobberoLogo from '../assets/jobberoLogo.png'
 const Privacy = () => {
   return (
     <>
-      <div className="h-[90px] bg-[#001F3F]">
-        <Navbar />
-      </div>
       <div className="my-11 w-[90%] max-w-[1024px] mx-auto">
         <UsSvgPng JobberoLogo={JobberoLogo} title={'PRIVACY POLICY'} />
         <div className="flex flex-col gap-6 my-9">

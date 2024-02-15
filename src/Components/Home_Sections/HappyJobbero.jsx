@@ -95,7 +95,7 @@ export const HappyJobbero = () => {
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import GoogleAds from '../../AdsComponent/GoogleAdsComponent'
+import GoogleAds from '../AdsComponent/GoogleAdsComponent'
 
 export const HappyJobberoPic = () => {
   return (
