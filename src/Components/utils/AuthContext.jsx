@@ -1,12 +1,13 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     checkUserStatus()
@@ -29,6 +30,7 @@ export const AuthProvider = ({ children }) => {
       const result = await response.json()
       const token = result.data.token
       localStorage.setItem('bearerToken', token)
+      navigate('/')
     } catch (error) {
       console.log('accountDetails', accountDetails)
     }
