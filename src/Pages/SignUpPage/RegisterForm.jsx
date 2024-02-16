@@ -5,9 +5,12 @@ import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import SignupSvg from '../../assets/SignupSvg.svg'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../Components/utils/AuthContext'
 export const RegisterForm = () => {
   const [errMsg, setErrMsg] = useState('')
   const [successMsg, setSuccessMsg] = useState('')
+
+  const { user, registerUser } = useAuth()
 
   const passwordRef = useRef()
   const ConfirmPasswordRef = useRef()
@@ -25,9 +28,9 @@ export const RegisterForm = () => {
   const handleRegistration = (e) => {
     e.preventDefault()
 
-    if (passwordRef !== ConfirmPasswordRef) {
-      return setErrMsg('Password does not match')
-    }
+    setErrMsg('')
+    const userInfo = userData
+    registerUser(userInfo)
   }
 
   const selectCustomStyles = {
@@ -117,7 +120,7 @@ export const RegisterForm = () => {
               name="Confirm Password"
               ref={ConfirmPasswordRef}
               onChange={(e) => {
-                setUserData({ ...userData, password: e.target.value })
+                setUserData({ ...userData, comfirmPassword: e.target.value })
               }}
               placeholder="Confirm Password"
               required

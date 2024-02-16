@@ -7,6 +7,7 @@ const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState('')
+  const [alert, setAlert] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -19,64 +20,86 @@ export const AuthProvider = ({ children }) => {
     let url = 'https://jobbero.onrender.com/api/v1/auth/signin-user'
 
     try {
-      const response = await fetch(url, {
-        method: 'POST',
+      const response = await axios.post(url, userInfo, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userInfo),
-        credentials: 'include',
+        withCredentials: true,
       })
-      const result = await response.json()
+
+      const result = response.data
       const token = result.data.token
       localStorage.setItem('bearerToken', token)
+      setAlert('Successfully logged in')
       navigate('/')
     } catch (error) {
-      console.log('accountDetails', accountDetails)
+      setAlert('Login failed. Please check your credentials.') // Provide user feedback
+      console.log(error)
     }
     setLoading(false)
   }
 
-  const LogoutUser = () => {}
+  const logoutUser = () => {
+    localStorage.removeItem('bearerToken')
+    setUser(null)
+  }
 
-  const RegisterUser = (userInfo) => {}
-
-  const checkUserStatus = async () => {
-    let token = localStorage.getItem('bearerToken')
-    let url = 'https://jobbero.onrender.com/api/v1/auth/current-user'
+  const registerUser = async (userInfo) => {
+    setLoading(true)
 
     try {
-      const response = await fetch(
-        'https://jobbero.onrender.com/api/v1/auth/current-user',
+      const response = await axios.post(
+        'https://jobbero.onrender.com/api/v1/auth/register-user',
+        userInfo,
         {
-          method: 'GET',
           headers: {
-            Authorization: `Bearer ${token}`,
-            Cookie:
-              'jobbero-session=eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcFpDSTZJbU5rTVdVNFpqTTJMVFU1T0RNdE5EbGxNQzA0TmpOaUxUTTVZMkkyWlRKak9UUTJNU0lzSW1WdFlXbHNJam9pYzJGdFFHZHRZV2xzTG1OdmJTSXNJbVpwY25OMFRtRnRaU0k2SW5OaGJtUnlZU0lzSWt4aGMzUk9ZVzFsSWpvaVpXMWxhMkVpTENKd2FHOXVaVTUxYldKbGNpSTZJakE0TVRNd01EZzROREF3SWl3aWNtOXNaU0k2SWtwUFFsOVRSVVZMUlZJaUxDSnBjMFZ0WVdsc1ZtVnlhV1pwWldRaU9uUnlkV1VzSW1selJXNWhZbXhsWkNJNmRISjFaU3dpYVdGMElqb3hOekE0TURFd05ESTJMQ0psZUhBaU9qRTNNRGd3T1RZNE1qWjkuMHJ1Mk5UT1ZZOUt0aEc4VmRVU3YzckdBZ29BZGgyYjFqV3M0LW81anpOcyJ9',
+            'Content-Type': 'application/json',
           },
         }
       )
-      const data = await response.json()
-      let accountDetails = JSON.stringify(data)
-      console.log(accountDetails)
-      setUser(accountDetails)
+      const result = response.data
+      console.log(result)
+    } catch (error) {
+      setAlert('Registration failed. Please try again.') // Provide user feedback
+      console.log(error)
+    }
+
+    setLoading(false)
+  }
+
+  const checkUserStatus = async () => {
+    let token = localStorage.getItem('bearerToken')
+
+    try {
+      const response = await axios.get(
+        'https://jobbero.onrender.com/api/v1/auth/current-user',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      const data = response.data
+      let currentUser = data.currentUser
+      setUser(currentUser)
     } catch (error) {
       console.log(error)
     }
+
     setLoading(false)
   }
 
   const contextData = {
     user,
     loginUser,
-    LogoutUser,
-    RegisterUser,
+    logoutUser,
+    registerUser,
   }
 
   return (
     <AuthContext.Provider value={contextData}>
       {loading ? <p>Loading...</p> : children}
+      {alert && <p>{alert}</p>} {/* Display alert if there is one */}
     </AuthContext.Provider>
   )
 }
