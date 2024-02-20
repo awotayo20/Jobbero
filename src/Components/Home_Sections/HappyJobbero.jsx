@@ -66,7 +66,7 @@ export const HappyJobbero = () => {
             <Link to={'/job-search-result'}>Explore Now</Link>
           </button>
         </div>
-        <div className="my-4 hidden md:flex gap-2 text-xs lg:text-sm">
+        <div className="my-4 hidden md:flex gap-2 text-xs lg:text-sm justify-center lg:justify-start">
           <button className="py-[6px] px-4 rounded-full border-white border-[1.5px]">
             200+ Visa Sponsorship Jobs
           </button>
@@ -78,7 +78,7 @@ export const HappyJobbero = () => {
           </button>
         </div>
         <div>
-          <p className="font-normal text-center md:text-left text-base md:text-xl max-w-[670px] mt-6 lg:mt-0">
+          <p className="font-normal text-center lg:text-left text-base md:text-xl max-w-[670px] mt-6 lg:mt-0">
             Centralized for your success! Apply confidently on our platform and
             experience a revolutionary approach to job hunting, ensuring your
             career advancement.

@@ -23,31 +23,33 @@ function PrivateRoutes() {
 
 function App() {
   return (
-    <AuthProvider>
-      <div className="h-[65px] md:h-[90px] w-full bg-[#001F3F] relative z-[9999]">
-        <Navbar />
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route path="login" element={<Login />} />
-        <Route path="forgotPassword" element={<ForgetPassword />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="contact" element={<ContactUs />} />
-        <Route path="confirm-email" element={<ConfirmEmail />} />
-        <Route path="reset-password" element={<ResetPassword />} />
-        <Route path="privacy-policy" element={<Privacy />} />
-        <Route path="terms-condition" element={<TermsAndCondition />} />
-        <Route path="/" element={<PrivateRoutes />}>
-          <Route path="job-search-result" element={<JobSearch />} />
-          <Route path="application" element={<Application />} />
-          <Route
-            path="application-successful"
-            element={<ApplicationSuccess />}
-          />
-        </Route>
-      </Routes>
-    </AuthProvider>
+    <>
+      <AuthProvider>
+        <div className="h-[65px] md:h-[90px] w-full bg-[#001F3F] relative z-[9999]">
+          <Navbar />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
+          <Route path="forgotPassword" element={<ForgetPassword />} />
+          <Route path="about" element={<AboutUs />} />
+          <Route path="contact" element={<ContactUs />} />
+          <Route path="confirm-email" element={<ConfirmEmail />} />
+          <Route path="reset-password" element={<ResetPassword />} />
+          <Route path="privacy-policy" element={<Privacy />} />
+          <Route path="terms-condition" element={<TermsAndCondition />} />
+          <Route path="/" element={<PrivateRoutes />}>
+            <Route path="job-search-result" element={<JobSearch />} />
+            <Route path="application" element={<Application />} />
+            <Route
+              path="application-successful"
+              element={<ApplicationSuccess />}
+            />
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </>
   )
 }
 

@@ -2,8 +2,6 @@ import { RegisterForm } from './RegisterForm'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 import Footer from '../../Components/Footer/index'
-import Navbar from '../../Components/Header/Navbar'
-import { useEffect } from 'react'
 import { useAuth } from '../../Components/utils/AuthContext'
 
 const SignUp = () => {

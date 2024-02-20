@@ -4,18 +4,17 @@ import CreativeSolutions from '../../assets/CreativeSolutions.png'
 import BsingWears from '../../assets/BsingWears.png'
 import DigitalSolutions from '../../assets/DigitalSolutions.png'
 import TandoriHotels from '../../assets/TandoriHotels.png'
-import { Navigate } from 'react-router-dom'
 
 const FeatureJobs = () => {
   return (
-    <div className="text-[#001F3F] mx-2">
+    <div className="text-[#001F3F] m-4">
       <div>
         <div className="flex justify-between mb-3 text-white">
           <h2 className=" font-semibold text-2xl">Featured Jobs</h2>
           <button className="font-normal text-xl">see more</button>
         </div>
         <div className="w-full">
-          <div className="bg-[#001F3F] py-9 gap-3 justify-center grid lg:grid-cols-3 w-full">
+          <div className="bg-[#001F3F] py-9 gap-3 justify-center lg:grid grid-cols-3 w-full flex flex-col">
             <FeatureJobsCard
               title={'HR Team Lead'}
               amount={'₦450 - 500k/Per Month'}

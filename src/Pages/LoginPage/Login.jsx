@@ -3,6 +3,7 @@ import SmileySvg from '../../assets/SmileySvg.svg'
 import Footer from '../../Components/Footer/index'
 import { useAuth } from '../../Components/utils/AuthContext'
 import { useEffect, useRef } from 'react'
+import ActionAlerts from '../AlertPage/AlertPage'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -92,6 +93,8 @@ const Login = () => {
           <div className="w-full bg-[#001F3F]">
             <Footer />
           </div>
+
+          <ActionAlerts errorMsgText={'Failed to Login'} />
         </>
       )}
     </>

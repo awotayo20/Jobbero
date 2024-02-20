@@ -1,14 +1,13 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState('')
-  const [alert, setAlert] = useState('')
-  const navigate = useNavigate()
+  const [error, setError] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   useEffect(() => {
     checkUserStatus()
@@ -30,10 +29,11 @@ export const AuthProvider = ({ children }) => {
       const result = response.data
       const token = result.data.token
       localStorage.setItem('bearerToken', token)
-      setAlert('Successfully logged in')
-      navigate('/')
+      setLoading(false)
+      setSuccess(true)
     } catch (error) {
-      setAlert('Login failed. Please check your credentials.') // Provide user feedback
+      setError(true)
+      setLoading(false)
       console.log(error)
     }
     setLoading(false)
@@ -60,7 +60,6 @@ export const AuthProvider = ({ children }) => {
       const result = response.data
       console.log(result)
     } catch (error) {
-      setAlert('Registration failed. Please try again.') // Provide user feedback
       console.log(error)
     }
 
@@ -94,6 +93,10 @@ export const AuthProvider = ({ children }) => {
     loginUser,
     logoutUser,
     registerUser,
+    error,
+    setError,
+    success,
+    setSuccess,
   }
 
   return (

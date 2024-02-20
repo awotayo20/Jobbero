@@ -8,6 +8,7 @@ import { useAuth } from '../utils/AuthContext'
 
 const Navbar = ({ children }) => {
   const { user, logoutUser } = useAuth()
+  const [currentUser, setCurrentUser] = useState()
 
   const [showmenu, setShowmenu] = useState(false)
   const [sideNav, setSideNav] = useState(false)
@@ -15,6 +16,10 @@ const Navbar = ({ children }) => {
 
   const hideMenu = useCallback(() => {
     setShowmenu(false)
+  }, [])
+
+  useEffect(() => {
+    setCurrentUser(user)
   }, [])
 
   const handleScroll = useCallback(() => {
