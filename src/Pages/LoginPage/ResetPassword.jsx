@@ -1,13 +1,10 @@
 import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Header/Navbar'
-import SmileySVG from './SmileySVG'
+import SignupSvg from '../../assets/SignupSvg.svg'
 
 const ResetPassword = () => {
   return (
     <>
-      <div className="h-[90px] bg-[#001F3F]">
-        <Navbar />
-      </div>
       <form action="">
         <div className="lg:grid grid-cols-2 items-center max-w-[1024px] mx-auto gap-11">
           <div>
@@ -31,7 +28,7 @@ const ResetPassword = () => {
             </button>
           </div>
           <div className="flex">
-            <SmileySVG />
+            <img src={SignupSvg} alt="" />
           </div>
         </div>
       </form>

@@ -1,6 +1,6 @@
 import happyJobbero from '../../assets/happyJobbero.png'
 import olubunmi from '../../assets/olubunmiPic.png'
-import { Typewriter, Cursor } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter'
 
 import {
   AppleIcon,
@@ -15,7 +15,7 @@ import {
 
 export const HappyJobbero = () => {
   return (
-    <div className="lg:grid grid-cols-6 items-center h-[100%]">
+    <div className="lg:grid grid-cols-6 items-center h-[100%] relative">
       <div className="text-white font-Poppins col-span-4 w-[90%] mx-auto">
         <div>
           <h2 className="font-bold text-center md:text-left text-3xl lg:text-5xl">
@@ -63,10 +63,10 @@ export const HappyJobbero = () => {
             </div>
           </div>
           <button className="bg-[#0074CC] mt-6 md:mt-0 text-lg font-semibold px-6 rounded-[18px] w-full lg:w-[200px] py-4 lg:py-0">
-            Explore Now
+            <Link to={'/job-search-result'}>Explore Now</Link>
           </button>
         </div>
-        <div className="my-4 hidden md:flex gap-2 text-xs lg:text-sm">
+        <div className="my-4 hidden md:flex gap-2 text-xs lg:text-sm justify-center lg:justify-start">
           <button className="py-[6px] px-4 rounded-full border-white border-[1.5px]">
             200+ Visa Sponsorship Jobs
           </button>
@@ -78,13 +78,15 @@ export const HappyJobbero = () => {
           </button>
         </div>
         <div>
-          <p className="font-normal text-center md:text-left text-base md:text-xl max-w-[670px] mt-6 lg:mt-0">
+          <p className="font-normal text-center lg:text-left text-base md:text-xl max-w-[670px] mt-6 lg:mt-0">
             Centralized for your success! Apply confidently on our platform and
             experience a revolutionary approach to job hunting, ensuring your
             career advancement.
           </p>
         </div>
-        {/* <DownloadApp /> */}
+        <div className="absolute bottom-0 w-full max-w-[520px] h-32 ">
+          <GoogleAds dataAdSlot="5263303847001041" />
+        </div>
       </div>
       <HappyJobberoPic />
     </div>
@@ -92,6 +94,8 @@ export const HappyJobbero = () => {
 }
 
 import React from 'react'
+import { Link } from 'react-router-dom'
+import GoogleAds from '../AdsComponent/GoogleAdsComponent'
 
 export const HappyJobberoPic = () => {
   return (

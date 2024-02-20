@@ -6,9 +6,6 @@ import Footer from '../Components/Footer'
 const AboutUs = () => {
   return (
     <>
-      <div className="h-[90px] bg-[#001F3F]">
-        <Navbar />
-      </div>
       <UsSvgPng JobberoLogo={JobberoLogo} title={'OUR STORY'} />
       <div className="my-11 max-w-[1024px] mx-auto">
         <div>

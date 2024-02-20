@@ -7,7 +7,7 @@ import farymmyLogo from '../../assets/farymmyLogo.png'
 
 const Partnership = () => {
   return (
-    <div className="bg-white rounded-lg lg:rounded-full my-9 mx-4 md:mx-0 p-4">
+    <div className="hidden lg:block bg-white rounded-lg lg:rounded-full my-9 mx-4 md:mx-0 p-4">
       <h4 className="text-[#001F3F] font-semibold text-2xl text-center py-5">
         The fastest-growing companies use Jobbero
       </h4>

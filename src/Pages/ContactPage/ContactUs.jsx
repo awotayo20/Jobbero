@@ -5,9 +5,6 @@ import Footer from '../../Components/Footer'
 const ContactUs = () => {
   return (
     <>
-      <div className="h-[90px] bg-[#001F3F]">
-        <Navbar />
-      </div>
       <div className="lg:grid grid-cols-2 mt-12 items-center">
         <div className="w-[90%] max-w-[450px] mx-auto">
           <h2 className="text-[#001F3F] font-semibold text-2xl">Contact Us</h2>

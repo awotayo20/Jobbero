@@ -1,15 +1,12 @@
 import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Header/Navbar'
 import EmailPng from '../../assets/Email.png'
-import SmileySVG from './SmileySVG'
+import SignupSvg from '../../assets/SignupSvg.svg'
 
 export default function ConfirmEmail({ email }) {
   email = 'samuel@gmail.com'
   return (
     <>
-      <div className="h-[90px] bg-[#001F3F]">
-        <Navbar />
-      </div>
       <div className="lg:grid grid-cols-2 items-center max-w-[1024px] mx-auto gap-11 text-[#001F3F]">
         <div className=" text-center">
           <div className="envelop flex justify-center">
@@ -40,7 +37,7 @@ export default function ConfirmEmail({ email }) {
           </div>
         </div>
         <div className="flex">
-          <SmileySVG />
+          <img src={SignupSvg} alt="" />
         </div>
       </div>
       <div className="bg-[#001F3F]">

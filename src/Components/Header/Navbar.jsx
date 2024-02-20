@@ -4,14 +4,22 @@ import { IoCloseSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import JobberoLogo from '../../assets/jobberoLogo.png'
 import SideNavMobile from './sidenavmobile'
+import { useAuth } from '../utils/AuthContext'
 
 const Navbar = ({ children }) => {
+  const { user, logoutUser } = useAuth()
+  const [currentUser, setCurrentUser] = useState()
+
   const [showmenu, setShowmenu] = useState(false)
   const [sideNav, setSideNav] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
   const hideMenu = useCallback(() => {
     setShowmenu(false)
+  }, [])
+
+  useEffect(() => {
+    setCurrentUser(user)
   }, [])
 
   const handleScroll = useCallback(() => {
@@ -42,7 +50,6 @@ const Navbar = ({ children }) => {
         <Link to="/">
           <img src={JobberoLogo} alt="" className="" />
         </Link>
-
         <div className=" w-full gap-7 lg:gap-12 hidden lg:flex justify-center items-start font-Poppins">
           <ul className="flex gap-12">
             <li className="underline underline-offset-8 decoration-4 font-Poppins">
@@ -66,15 +73,27 @@ const Navbar = ({ children }) => {
             </li>
           </ul>
         </div>
-
-        <div className="icon lg:flex hidden w-[27%] justify-around  items-center">
-          <button className="py-[6px] text-sm px-4 lg:flex hidden border-[3px] border-[#0074CC] rounded-full">
-            <Link to="/login">Login</Link>
-          </button>
-          <button className="py-[6px] text-sm lg:flex hidden bg-[#0074CC] text-white px-4 border-[3px] border-[#0074CC] rounded-full">
-            <Link to="/signup">Sign Up</Link>
-          </button>
-        </div>
+        {user ? (
+          <>
+            <button
+              className="py-[6px] text-sm lg:flex hidden bg-[#0074CC] text-white px-4 border-[3px] border-[#0074CC] rounded-full"
+              onClick={logoutUser}
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="icon lg:flex hidden w-[27%] justify-around  items-center">
+              <button className="py-[6px] text-sm px-4 lg:flex hidden border-[3px] border-[#0074CC] rounded-full">
+                <Link to="/login">Login</Link>
+              </button>
+              <button className="py-[6px] text-sm lg:flex hidden bg-[#0074CC] text-white px-4 border-[3px] border-[#0074CC] rounded-full">
+                <Link to="/signup">Sign Up</Link>
+              </button>
+            </div>
+          </>
+        )}
 
         <div onClick={() => setSideNav(!sideNav)} className="flex lg:hidden">
           {sideNav ? (

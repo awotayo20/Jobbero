@@ -62,7 +62,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="my-9">
+      <div className="mt-9">
         <DownloadApp />
       </div>
     </div>
