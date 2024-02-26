@@ -1,22 +1,19 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { toast } from 'sonner'
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState('')
-  const [error, setError] = useState(false)
-  const [success, setSuccess] = useState(false)
-
-  useEffect(() => {
-    checkUserStatus()
-  }, [])
 
   const loginUser = async (userInfo) => {
     setLoading(true)
 
-    let url = 'https://jobbero.onrender.com/api/v1/auth/signin-user'
+    let url = `${API_BASE_URL}/api/v1/auth/signin-user`
 
     try {
       const response = await axios.post(url, userInfo, {
@@ -26,13 +23,15 @@ export const AuthProvider = ({ children }) => {
         withCredentials: true,
       })
 
+      console.log(response)
+
       const result = response.data
       const token = result.data.token
       localStorage.setItem('bearerToken', token)
       setLoading(false)
-      setSuccess(true)
+      toast.success('Login Successful')
     } catch (error) {
-      setError(true)
+      toast.error('Failed to Login')
       setLoading(false)
       console.log(error)
     }
@@ -49,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        'https://jobbero.onrender.com/api/v1/auth/register-user',
+        `${API_BASE_URL}/api/v1/auth/register-user`,
         userInfo,
         {
           headers: {
@@ -57,13 +56,17 @@ export const AuthProvider = ({ children }) => {
           },
         }
       )
+      setLoading(false)
+      toast.success('Register Successfully')
+
       const result = response.data
       console.log(result)
     } catch (error) {
+      setLoading(false)
+      toast.error('Failed to Register')
+
       console.log(error)
     }
-
-    setLoading(false)
   }
 
   const checkUserStatus = async () => {
@@ -71,38 +74,36 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await axios.get(
-        'https://jobbero.onrender.com/api/v1/auth/current-user',
+        `${API_BASE_URL}/api/v1/auth/current-user`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       )
+      console.log(response)
       const data = response.data
       let currentUser = data.currentUser
       setUser(currentUser)
     } catch (error) {
       console.log(error)
     }
-
-    setLoading(false)
   }
+
+  useEffect(() => {
+    checkUserStatus()
+  }, [loading])
 
   const contextData = {
     user,
     loginUser,
     logoutUser,
     registerUser,
-    error,
-    setError,
-    success,
-    setSuccess,
   }
 
   return (
     <AuthContext.Provider value={contextData}>
       {loading ? <p>Loading...</p> : children}
-      {alert && <p>{alert}</p>} {/* Display alert if there is one */}
     </AuthContext.Provider>
   )
 }

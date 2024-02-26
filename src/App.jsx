@@ -27,6 +27,13 @@ function PrivateRoutes() {
   return user ? <Outlet /> : <Navigate to="/login" />
 }
 
+/**
+ * The main function `App` in a React application.
+ * Sets up the routing for different pages and components using the `react-router-dom` library.
+ * Wraps the entire application with the `AuthProvider` component, which provides authentication functionality to the child components.
+ *
+ * @returns {JSX.Element} The JSX code representing the structure of the application.
+ */
 function App() {
   return (
     <>
@@ -56,7 +63,7 @@ function App() {
         </Routes>
       </AuthProvider>
     </>
-  )
+  );
 }
 
 export default App

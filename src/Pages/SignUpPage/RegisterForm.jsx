@@ -1,15 +1,10 @@
 import Select from 'react-select'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useRef, useState } from 'react'
-import Alert from '@mui/material/Alert'
-import AlertTitle from '@mui/material/AlertTitle'
 import SignupSvg from '../../assets/SignupSvg.svg'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../Components/utils/AuthContext'
 export const RegisterForm = () => {
-  const [errMsg, setErrMsg] = useState('')
-  const [successMsg, setSuccessMsg] = useState('')
-
   const { user, registerUser } = useAuth()
 
   const passwordRef = useRef()
@@ -28,7 +23,6 @@ export const RegisterForm = () => {
   const handleRegistration = (e) => {
     e.preventDefault()
 
-    setErrMsg('')
     const userInfo = userData
     registerUser(userInfo)
   }
@@ -53,21 +47,6 @@ export const RegisterForm = () => {
   ]
   return (
     <form onSubmit={handleRegistration}>
-      <div className="AlertMsg fixed top-24 right-14 z-50">
-        <div className={successMsg ? 'block' : 'hidden'}>
-          <Alert severity="success">
-            <AlertTitle>Success</AlertTitle>
-            {successMsg}
-          </Alert>
-        </div>
-
-        <div className={errMsg ? 'block' : 'hidden'}>
-          <Alert severity="error">
-            <AlertTitle>Error</AlertTitle>
-            {errMsg}
-          </Alert>
-        </div>
-      </div>
       <div className=" lg:grid lg:grid-cols-2 items-center my-6">
         <div className=" grid gap-5 w-full max-w-[650px] mx-auto">
           <div className="input-container">
