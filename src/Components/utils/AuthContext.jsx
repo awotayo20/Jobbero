@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState('')
 
+  // Login Function
   const loginUser = async (userInfo) => {
     setLoading(true)
 
@@ -38,11 +39,13 @@ export const AuthProvider = ({ children }) => {
     setLoading(false)
   }
 
+  // Logout Function
   const logoutUser = () => {
     localStorage.removeItem('bearerToken')
     setUser(null)
   }
 
+  // Register Function
   const registerUser = async (userInfo) => {
     setLoading(true)
 
@@ -69,6 +72,7 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
+  //Check user function
   const checkUserStatus = async () => {
     let token = localStorage.getItem('bearerToken')
 
