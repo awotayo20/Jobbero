@@ -4,8 +4,20 @@ import CreativeSolutions from '../../assets/CreativeSolutions.png'
 import BsingWears from '../../assets/BsingWears.png'
 import DigitalSolutions from '../../assets/DigitalSolutions.png'
 import TandoriHotels from '../../assets/TandoriHotels.png'
+import { useEffect, useState } from 'react'
+import { useAuth } from '../utils/AuthContext'
+import { GetAllFeaturedJobs } from '../../APIs/FeatureJobs'
+import { Result } from 'postcss'
 
 const FeatureJobs = () => {
+  const [getAllFeatureJobs, setGetAllFeatureJobs] = useState()
+  console.log(getAllFeatureJobs)
+  useEffect(() => {
+    GetAllFeaturedJobs().then((result) => {
+      setGetAllFeatureJobs(result)
+    })
+  }, [])
+
   return (
     <div className="text-[#001F3F] m-4">
       <div>
@@ -15,6 +27,21 @@ const FeatureJobs = () => {
         </div>
         <div className="w-full">
           <div className="bg-[#001F3F] py-9 gap-3 justify-center lg:grid grid-cols-3 w-full flex flex-col">
+            {getAllFeatureJobs &&
+              getAllFeatureJobs.map(({ job }) => {
+                const { title, WorkMode, salary, jobType, location } = job
+                console.log(title, WorkMode, salary)
+                return (
+                  <FeatureJobsCard
+                    title={title}
+                    amount={`₦${salary}`}
+                    location={WorkMode}
+                    type={jobType}
+                    companyLocation={location}
+                  />
+                )
+              })}
+
             <FeatureJobsCard
               title={'HR Team Lead'}
               amount={'₦450 - 500k/Per Month'}
@@ -123,7 +150,7 @@ export const FeatureJobsCard = ({
             </div>
           </div>
           <div className="flex gap-2">
-            <img src={CompanyLogo} alt="elasticLogo" />
+            <img src={CompanyLogo} />
             <div>
               <h4 className="font-medium text-base">{companyName}</h4>
               <p className="text-sm">{companyLocation}</p>
