@@ -7,15 +7,8 @@ import { useEffect, useRef } from 'react'
 const Login = () => {
   const navigate = useNavigate()
   const { user, loginUser } = useAuth()
-  console.log(user)
 
   const loginForm = useRef(null)
-
-  useEffect(() => {
-    if (user) {
-      navigate('/')
-    }
-  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -92,8 +85,6 @@ const Login = () => {
           <div className="w-full bg-[#001F3F]">
             <Footer />
           </div>
-
-          <ActionAlerts errorMsgText={'Failed to Login'} />
         </>
       )}
     </>
