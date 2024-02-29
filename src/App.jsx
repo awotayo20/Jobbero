@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route, Routes, Navigate, Outlet } from 'react-router-dom'
-import { AuthProvider, useAuth } from './Components/utils/AuthContext'
+import { Route, Routes, Navigate } from 'react-router-dom'
+import { AuthProvider } from './Components/utils/AuthContext'
 import Navbar from './Components/Header/Navbar'
 import Home from './Pages/Home'
 import SignUp from './Pages/SignUpPage/SignUp'
@@ -15,17 +15,8 @@ import TermsAndCondition from './Pages/TermsAndCondition'
 import JobSearch from './Pages/Job Pages/JobSearch'
 import Application from './Pages/Job Pages/Application'
 import ApplicationSuccess from './Pages/Job Pages/ApplicationSuccess'
-
-/**
- * This function handles private routes in a React application.
- * It checks if the user is authenticated and returns the appropriate component based on the user's authentication status.
- *
- * @returns {JSX.Element} The component to render based on the user's authentication status.
- */
-function PrivateRoutes() {
-  const { user } = useAuth()
-  return user ? <Outlet /> : <Navigate to="/login" />
-}
+import AdminDashBoard from './Pages/Dashboard/AdminDashBoardPage/AdminDashboard'
+import { PrivateRoutes } from './Routes/PrivateRoutes'
 
 /**
  * The main function `App` in a React application.
@@ -43,6 +34,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Navigate to={'/'} />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
           <Route path="forgotPassword" element={<ForgetPassword />} />
@@ -52,6 +44,14 @@ function App() {
           <Route path="reset-password" element={<ResetPassword />} />
           <Route path="privacy-policy" element={<Privacy />} />
           <Route path="terms-condition" element={<TermsAndCondition />} />
+          <Route
+            path="dashboard"
+            element={<AdminDashBoard>Home</AdminDashBoard>}
+          />
+          <Route
+            path="/create-job"
+            element={<AdminDashBoard>create form</AdminDashBoard>}
+          />
           <Route path="/" element={<PrivateRoutes />}>
             <Route path="job-search-result" element={<JobSearch />} />
             <Route path="application" element={<Application />} />
@@ -63,7 +63,7 @@ function App() {
         </Routes>
       </AuthProvider>
     </>
-  );
+  )
 }
 
 export default App
