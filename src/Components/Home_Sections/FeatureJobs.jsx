@@ -42,7 +42,7 @@ const FeatureJobs = () => {
                 )
               })}
 
-            <FeatureJobsCard
+            {/* <FeatureJobsCard
               title={'HR Team Lead'}
               amount={'₦450 - 500k/Per Month'}
               location={'On-Site'}
@@ -111,7 +111,8 @@ const FeatureJobs = () => {
                   Visa Sponsorship
                 </button>
               }
-            />
+            /> */}
+            {/* <div></div> */}
           </div>
         </div>
       </div>
