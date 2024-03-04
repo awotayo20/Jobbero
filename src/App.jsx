@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
-import { AuthProvider } from './Components/utils/AuthContext'
+import { AuthProvider, useAuth } from './Components/utils/AuthContext'
 import Navbar from './Components/Header/Navbar'
 import Home from './Pages/Home'
 import SignUp from './Pages/SignUpPage/SignUp'
@@ -17,14 +17,9 @@ import Application from './Pages/Job Pages/Application'
 import ApplicationSuccess from './Pages/Job Pages/ApplicationSuccess'
 import AdminDashBoard from './Pages/Dashboard/AdminDashBoardPage/AdminDashboard'
 import { PrivateRoutes } from './Routes/PrivateRoutes'
+import CreateJobForm from './Pages/Dashboard/AdminDashBoardPage/CreateJobForm'
+import PostJobs from './Pages/Dashboard/AdminDashBoardPage/PostJobs'
 
-/**
- * The main function `App` in a React application.
- * Sets up the routing for different pages and components using the `react-router-dom` library.
- * Wraps the entire application with the `AuthProvider` component, which provides authentication functionality to the child components.
- *
- * @returns {JSX.Element} The JSX code representing the structure of the application.
- */
 function App() {
   return (
     <>
@@ -36,6 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Navigate to={'/'} />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="job-search-result" element={<JobSearch />} />
           <Route path="login" element={<Login />} />
           <Route path="forgotPassword" element={<ForgetPassword />} />
           <Route path="about" element={<AboutUs />} />
@@ -50,10 +46,21 @@ function App() {
           />
           <Route
             path="/create-job"
-            element={<AdminDashBoard>create form</AdminDashBoard>}
+            element={
+              <AdminDashBoard>
+                <CreateJobForm />
+              </AdminDashBoard>
+            }
+          />
+          <Route
+            path="/post-job"
+            element={
+              <AdminDashBoard>
+                <PostJobs />
+              </AdminDashBoard>
+            }
           />
           <Route path="/" element={<PrivateRoutes />}>
-            <Route path="job-search-result" element={<JobSearch />} />
             <Route path="application" element={<Application />} />
             <Route
               path="application-successful"

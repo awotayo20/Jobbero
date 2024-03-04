@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
@@ -9,11 +10,10 @@ const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState('')
+  const navigate = useNavigate()
 
   // Login Function
   const loginUser = async (userInfo) => {
-    setLoading(true)
-
     let url = `${API_BASE_URL}/api/v1/auth/signin-user`
 
     try {
@@ -24,19 +24,15 @@ export const AuthProvider = ({ children }) => {
         withCredentials: true,
       })
 
-      console.log(response)
-
       const result = response.data
-      const token = result.data.token
+      const token = response.data.data.token
+      console.log(token)
       localStorage.setItem('bearerToken', token)
-      setLoading(false)
       toast.success('Login Successful')
+      navigate('/job-search-result')
     } catch (error) {
       toast.error('Failed to Login')
-      setLoading(false)
-      console.log(error)
     }
-    setLoading(false)
   }
 
   // Logout Function
@@ -47,8 +43,6 @@ export const AuthProvider = ({ children }) => {
 
   // Register Function
   const registerUser = async (userInfo) => {
-    setLoading(true)
-
     try {
       const response = await axios.post(
         `${API_BASE_URL}/api/v1/auth/register-user`,
@@ -59,21 +53,17 @@ export const AuthProvider = ({ children }) => {
           },
         }
       )
-      setLoading(false)
       toast.success('Register Successfully')
 
       const result = response.data
-      console.log(result)
     } catch (error) {
-      setLoading(false)
       toast.error('Failed to Register')
-
-      console.log(error)
     }
   }
 
   //Check user function
   const checkUserStatus = async () => {
+    setLoading(true)
     let token = localStorage.getItem('bearerToken')
 
     try {
@@ -85,29 +75,32 @@ export const AuthProvider = ({ children }) => {
           },
         }
       )
-      console.log(response)
       const data = response.data
       let currentUser = data.currentUser
+      console.log(currentUser)
       setUser(currentUser)
+      setLoading(false)
     } catch (error) {
-      console.log(error)
+      setLoading(false)
     }
   }
 
   useEffect(() => {
     checkUserStatus()
-  }, [loading])
+  }, [])
 
   const contextData = {
+    loading,
     user,
     loginUser,
     logoutUser,
     registerUser,
+    checkUserStatus,
   }
 
   return (
     <AuthContext.Provider value={contextData}>
-      {loading ? <p>Loading...</p> : children}
+      {loading ? <p>loading...</p> : children}
     </AuthContext.Provider>
   )
 }

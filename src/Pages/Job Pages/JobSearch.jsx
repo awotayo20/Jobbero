@@ -2,31 +2,6 @@ import Select from 'react-select'
 import SearchResult from './SearchResult'
 
 const JobSearch = () => {
-  const Industry = [
-    { value: '', label: 'Job Industry' },
-    { value: 'IT & Telecoms', label: 'IT & Telecoms' },
-    { value: 'Education', label: 'Education' },
-    { value: 'Construction', label: 'Construction' },
-  ]
-  const type = [
-    { value: '', label: 'Job Type' },
-    { value: 'No Experience', label: 'No Experience' },
-    { value: 'Internship', label: 'Internship' },
-    { value: 'Expert', label: 'Expert' },
-  ]
-  const work_mode = [
-    { value: '', label: 'Work Mode' },
-    { value: 'Remote', label: 'Remote' },
-    { value: 'Hybrid', label: 'Hybrid' },
-    { value: 'onsite', label: 'onsite' },
-  ]
-  const date = [
-    { value: '', label: 'Job Date' },
-    { value: 'Past 24 hours', label: 'Past 24 hours' },
-    { value: 'Last week', label: 'Last week' },
-    { value: 'last month', label: 'last month' },
-  ]
-
   return (
     <>
       <div>
@@ -61,20 +36,6 @@ const JobSearch = () => {
           <button className="bg-[#0074CC] mt-6 md:mt-0 text-lg font-semibold px-6 rounded-[18px] w-full lg:w-[200px] py-4 lg:py-0 text-white">
             Explore Now
           </button>
-        </div>
-        <div className="grid grid-cols-4 gap-6 max-w-[1024px] mx-auto">
-          <div>
-            <Select options={Industry} defaultValue={Industry[0]} />
-          </div>
-          <div>
-            <Select options={type} defaultValue={type[0]} />
-          </div>
-          <div>
-            <Select options={work_mode} defaultValue={work_mode[0]} />
-          </div>
-          <div>
-            <Select options={date} defaultValue={date[0]} />
-          </div>
         </div>
       </div>
       <div className="my-8">

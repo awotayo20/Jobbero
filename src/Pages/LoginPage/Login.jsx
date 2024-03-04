@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react'
 
 const Login = () => {
   const navigate = useNavigate()
-  const { user, loginUser } = useAuth()
+  const { user, loading, loginUser } = useAuth()
 
   const loginForm = useRef(null)
 
@@ -18,6 +18,14 @@ const Login = () => {
 
     const userInfo = { email, password }
     loginUser(userInfo)
+  }
+
+  if (user) {
+    return <Navigate to={'/'} replace />
+  }
+
+  if (loading) {
+    return null
   }
 
   return (
