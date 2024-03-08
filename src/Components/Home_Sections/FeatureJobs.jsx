@@ -40,6 +40,48 @@ const FeatureJobs = () => {
                   />
                 )
               })}
+            <FeatureJobsCard
+              title={'DevOps Engineer'}
+              WorkMode={'Full Time'}
+              jobUrl={`https://www.crossover.com/jobs/5152/skyvera/devops-engineer`}
+              companyName={'Skyvera'}
+              jobType={'Remote, any timezone'}
+            />
+            <FeatureJobsCard
+              title={'React Native Developer'}
+              WorkMode={'Full Time'}
+              jobUrl={`https://www.crossover.com/jobs/5205/aurea-software/react-native-developer`}
+              companyName={'Aurea'}
+              jobType={'Remote, any timezone'}
+            />
+            <FeatureJobsCard
+              title={'Graphic Designer'}
+              WorkMode={'Part Time'}
+              jobUrl={`https://careers.bionictalent.com/jobs/3531861-graphics-designer-0120-karachi`}
+              companyName={'Bionic Talent'}
+              jobType={'Fully Remote'}
+            />
+            <FeatureJobsCard
+              title={'Sales Manager'}
+              WorkMode={'Full Time'}
+              jobUrl={`https://www.allianz.ng/careers/Professional-Sales-Manager.html`}
+              companyName={'Allianz'}
+              jobType={'On-Site'}
+            />
+            <FeatureJobsCard
+              title={'Medical Sales Rep'}
+              WorkMode={'Full Time'}
+              jobUrl={`https://may-baker.com/career/`}
+              companyName={'May & Baker'}
+              jobType={'okoto,Osun, Ondo Nigeria'}
+            />
+            <FeatureJobsCard
+              title={'Utility Manager'}
+              WorkMode={'Full Time'}
+              jobUrl={`https://wd1.myworkdaysite.com/en-US/recruiting/abinbev/NGA/job/International-Breweries---Porthacourt-Br/UTILITIES-OPERATOR_30059719?utm_source=jobbero`}
+              companyName={'International Breweries'}
+              jobType={'Porthacourt, Nigeria'}
+            />
           </div>
         </div>
       </div>
