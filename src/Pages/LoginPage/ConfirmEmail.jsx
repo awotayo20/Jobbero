@@ -1,5 +1,5 @@
 import Footer from '../../Components/Footer'
-import Navbar from '../../Components/Header/Navbar'
+// import Navbar from '../../Components/Header/Navbar'
 import EmailPng from '../../assets/Email.png'
 import SignupSvg from '../../assets/SignupSvg.svg'
 

@@ -1,5 +1,4 @@
 import Footer from '../../Components/Footer'
-import Navbar from '../../Components/Header/Navbar'
 import SignupSvg from '../../assets/SignupSvg.svg'
 
 const ResetPassword = () => {

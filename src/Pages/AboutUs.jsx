@@ -1,6 +1,6 @@
 import { Subscribe } from './Subscribe'
 import JobberoLogo from '../assets/jobberoLogo.png'
-import Navbar from '../Components/Header/Navbar'
+// import Navbar from '../Components/Header/Navbar'
 import Footer from '../Components/Footer'
 
 const AboutUs = () => {

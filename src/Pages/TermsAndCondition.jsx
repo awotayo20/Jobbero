@@ -1,5 +1,4 @@
 import Footer from '../Components/Footer'
-import Navbar from '../Components/Header/Navbar'
 import { UsSvgPng } from './AboutUs'
 import { Subscribe } from './Subscribe'
 import JobberoLogo from '../assets/jobberoLogo.png'

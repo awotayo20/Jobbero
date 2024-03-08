@@ -22,26 +22,45 @@ const Footer = () => {
               relevant job opportunities and apply with ease.
             </p>
             <div className="flex gap-7 mt-[24px] justify-center lg:justify-start">
-              <img
-                src={TwitterIcon}
-                alt="facebook"
-                className=" hover:cursor-pointer"
-              />
-              <img
-                src={InstagramIcon}
-                alt="facebook"
-                className=" hover:cursor-pointer"
-              />
-              <img
-                src={LinkedInIcon}
-                alt="facebook"
-                className=" hover:cursor-pointer"
-              />
-              <img
-                src={FacebookIcon}
-                alt="facebook"
-                className=" hover:cursor-pointer"
-              />
+              <a target="_blank" href={'https://twitter.com/jobberojobs'}>
+                <img
+                  src={TwitterIcon}
+                  alt="facebook"
+                  className=" hover:cursor-pointer"
+                />
+              </a>
+              <a
+                target="_blank"
+                href={
+                  'https://www.instagram.com/jobberojobs?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr'
+                }
+              >
+                <img
+                  src={InstagramIcon}
+                  alt="facebook"
+                  className=" hover:cursor-pointer"
+                />
+              </a>
+              <a
+                target="_blank"
+                href={'https://www.linkedin.com/company/jobberohq'}
+              >
+                <img
+                  src={LinkedInIcon}
+                  alt="facebook"
+                  className=" hover:cursor-pointer"
+                />
+              </a>
+              <a
+                target="_blank"
+                href={'https://web.facebook.com/profile.php?id=100066241373517'}
+              >
+                <img
+                  src={FacebookIcon}
+                  alt="facebook"
+                  className=" hover:cursor-pointer"
+                />
+              </a>
             </div>
           </div>
         </div>

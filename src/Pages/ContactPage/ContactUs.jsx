@@ -1,5 +1,5 @@
 import HijabLady from './HijabLady'
-import Navbar from '../../Components/Header/Navbar'
+// import Navbar from '../../Components/Header/Navbar'
 import Footer from '../../Components/Footer'
 
 const ContactUs = () => {

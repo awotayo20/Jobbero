@@ -2,7 +2,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import SignupSvg from '../../assets/SignupSvg.svg'
 
 import Footer from '../../Components/Footer/index.jsx'
-import Navbar from '../../Components/Header/Navbar.jsx'
+// import Navbar from '../../Components/Header/Navbar.jsx'
 
 const ForgetPassword = () => {
   const reCAPTCHAChange = (value) => {

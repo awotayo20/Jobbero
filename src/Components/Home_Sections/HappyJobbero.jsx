@@ -16,7 +16,7 @@ import {
 export const HappyJobbero = () => {
   return (
     <div className="lg:grid grid-cols-6 items-center h-[100%] relative">
-      <div className="text-white font-Poppins col-span-4 w-[90%] mx-auto">
+      <div className="text-white font-Poppins col-span-4 w-full lg:w-[90%] mx-auto">
         <div>
           <h2 className="font-bold text-center md:text-left text-3xl lg:text-5xl">
             Job Search Simplified

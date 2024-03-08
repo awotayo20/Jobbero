@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './Components/utils/AuthContext'
-import Navbar from './Components/Header/Navbar'
+// import Navbar from './Components/Header/Navbar'
 import Home from './Pages/Home'
 import SignUp from './Pages/SignUpPage/SignUp'
 import Login from './Pages/LoginPage/Login'
@@ -19,14 +19,14 @@ import AdminDashBoard from './Pages/Dashboard/AdminDashBoardPage/AdminDashboard'
 import { PrivateRoutes } from './Routes/PrivateRoutes'
 import CreateJobForm from './Pages/Dashboard/AdminDashBoardPage/CreateJobForm'
 import PostJobs from './Pages/Dashboard/AdminDashBoardPage/PostJobs'
+import Header from './Components/Header/Header'
 
 function App() {
   return (
     <>
       <AuthProvider>
-        <div className="h-[65px] md:h-[90px] w-full bg-[#001F3F] relative z-[9999]">
-          <Navbar />
-        </div>
+        <Header />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Navigate to={'/'} />} />

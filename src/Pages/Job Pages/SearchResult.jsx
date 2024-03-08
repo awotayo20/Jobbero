@@ -16,7 +16,6 @@ const SearchResult = () => {
       setCurrentJob(availableJobs[0])
     })
   }, [])
-  const jobListings = [availableJobs]
 
   const handleJobClick = useCallback(
     (index) => {
@@ -32,9 +31,10 @@ const SearchResult = () => {
         <div className="grid gap-6 mx-4 w-full  col-span-3">
           {availableJobs &&
             availableJobs.map((availableJob, index) => {
-              const { title, WorkMode, salary, jobType, jobUrl } = availableJob
+              const { title, WorkMode, salary, jobType, companyName, jobUrl } =
+                availableJob
               return (
-                <div>
+                <div className=" space-y-14">
                   <div
                     onClick={() => handleJobClick(index)}
                     className=" cursor-pointer"
@@ -45,16 +45,14 @@ const SearchResult = () => {
                       WorkMode={WorkMode}
                       jobType={jobType}
                       CompanyLogo={BsingWears}
-                      companyName={'Bsing Wears'}
-                      companyLocation={'Abuja, Ng'}
-                      dayLeft={'10 Days left'}
+                      companyName={companyName}
                     />
                   </div>
                 </div>
               )
             })}
         </div>
-        <div className="col-span-5 w-[95%] mx-auto">
+        <div className="col-span-5 w-[95%] mx-auto hidden md:block">
           {currentJob ? (
             <>
               <JobDescription {...currentJob} />
